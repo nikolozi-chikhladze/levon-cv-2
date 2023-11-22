@@ -6,6 +6,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #fff;
+  position: relative;
   
 `;
 
@@ -28,16 +29,15 @@ const HeaderMenuButton = styled.div`
     border-left: 2px solid #fff;
   
   
+  
     @media (max-width: 480px) {
       padding: 25px 32px;
     }
 `;
 
-const HeaderMenuContainer = styled.div``;
 
 export default {
     HeaderContainer,
     HeaderTitle,
     HeaderMenuButton,
-    HeaderMenuContainer
 }

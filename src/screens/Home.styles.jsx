@@ -17,11 +17,7 @@ export const HomeTitleContainer = styled.div`
   }
 `;
 
-export const HomeContainer = styled.div`
-  @media (max-width: 480px) {
-    padding: 32px;
-  }
-`;
+
 
 export const HomeTextSummary = styled.p`
   font-family: "Helvetica Neue",serif;
@@ -34,15 +30,7 @@ export const HomeTextSummary = styled.p`
   }
 `;
 
-export const HomeBox = styled.div`
-  padding: 16px 18px;
-  border: 2px solid #fff;
-  border-bottom: none;
-  
-  &:last-child {
-    border-bottom: 2px solid #fff;
-  }
-`
+
 
 export const HomeTextPosition = styled.p`
   font-family: "Helvetica Neue",serif;
@@ -56,16 +44,5 @@ export const HomeTextPosition = styled.p`
 `;
 
 
-export const HomeSocialsContainer = styled.div``;
 
-export const HomeTextSocial = styled.p`
-  font-family: "Helvetica Neue",serif;
-  font-weight: bold;
-  color: #fff;
-
-  @media (max-width: 480px) {
-    font-size: 16px;
-    line-height: 20px;
-  };
-`;
 
