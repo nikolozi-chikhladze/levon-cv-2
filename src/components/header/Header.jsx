@@ -1,10 +1,9 @@
-import HeaderStyles from "./Header.styles.jsx";
 import BurgerIcon from '/src/assets/menu-burger.svg?react'
 import CloseIcon from '/src/assets/menu-close.svg?react'
-import {memo, useContext, useState} from "react";
+import {memo, useContext} from "react";
 import {CommonContext} from "../../state/Common.context.jsx";
 
-const {HeaderContainer, HeaderTitle, HeaderMenuButton} = HeaderStyles;
+import {HeaderContainer, HeaderTitle, HeaderMenuButton} from './Header.styles.jsx'
 export const Header = memo( () => {
     const {isHeaderOpen, toggleHeader} = useContext(CommonContext)
 

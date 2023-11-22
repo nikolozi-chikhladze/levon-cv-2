@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   
 `;
 
-const HeaderTitle = styled.h1`
+export const HeaderTitle = styled.h1`
   font-family: "Helvetica Neue",serif;
   font-weight: normal;
   color: #fff;
@@ -22,13 +22,11 @@ const HeaderTitle = styled.h1`
   }
 `;
 
-const HeaderMenuButton = styled.div`
+export const HeaderMenuButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: 2px solid #fff;
-  
-  
   
     @media (max-width: 480px) {
       padding: 25px 32px;
@@ -36,8 +34,3 @@ const HeaderMenuButton = styled.div`
 `;
 
 
-export default {
-    HeaderContainer,
-    HeaderTitle,
-    HeaderMenuButton,
-}

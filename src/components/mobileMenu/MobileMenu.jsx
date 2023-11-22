@@ -1,9 +1,8 @@
-import React, {useCallback, useContext} from 'react'
 import {Container} from "../shared/Container.jsx";
 import {Box} from "../shared/Box.jsx";
 import {MobileMenuText} from "./MobileMenu.styles.jsx";
 import {SocialsContainer, SocialsText} from "../shared/Socials.jsx";
-import {Link, redirect, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {CommonContext} from "../../state/Common.context.jsx";
 
 export const MobileMenu = () => {
