@@ -5,6 +5,7 @@ import HomeScreen from "./screens/Home/Home.screen.jsx";
 import './reset.css';
 import {CommonContextProvider} from "./state/Common.context.jsx";
 import {ContactScreen} from "./screens/Contact/Contact.screen.jsx";
+import {WorksScreen} from "./screens/Works/Works.screen.jsx";
 
 
 const router = createBrowserRouter([
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/works",
-        element: <div>Works page</div>
+        element: <WorksScreen />
     },
     {
         path: "/contact",
