@@ -10,15 +10,9 @@ export const HeaderContainer = styled.header`
   
 `;
 
-export const HeaderTitle = styled.h1`
-  font-family: "Helvetica Neue",serif;
-  font-weight: normal;
-  color: #fff;
-  
+export const HeaderTitleContainer = styled.h1`
   @media (max-width: 480px) {
-    font-size: 20px;
-    line-height: 24px;
-    padding: 37px 64px 27px 32px;
+    padding: 27px 52px 27px 32px;
   }
 `;
 

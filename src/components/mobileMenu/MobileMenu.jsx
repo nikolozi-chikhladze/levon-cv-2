@@ -1,10 +1,10 @@
 import {Container} from "../shared/Container.jsx";
 import {Box} from "../shared/Box.jsx";
-import {MobileMenuText} from "./MobileMenu.styles.jsx";
 import {SocialsContainer, SocialsText} from "../shared/Socials.jsx";
 import {useNavigate} from "react-router-dom";
 import {CommonContext} from "../../state/Common.context.jsx";
 import {useCallback, useContext} from "react";
+import {TextAccent} from "../shared/Text.jsx";
 
 export const MobileMenu = () => {
     const navigate = useNavigate();
@@ -18,16 +18,16 @@ export const MobileMenu = () => {
     return (
         <Container>
             <Box onClick={navigateTo("/")}>
-                <MobileMenuText>Home</MobileMenuText>
+                <TextAccent>Home</TextAccent>
             </Box>
             <Box onClick={navigateTo("/about")}>
-                <MobileMenuText>About</MobileMenuText>
+                <TextAccent>About</TextAccent>
             </Box>
             <Box onClick={navigateTo("/works")}>
-                <MobileMenuText>Works</MobileMenuText>
+                <TextAccent>Works</TextAccent>
             </Box>
             <Box onClick={navigateTo("/contact")}>
-                <MobileMenuText>Contact</MobileMenuText>
+                <TextAccent>Contact</TextAccent>
             </Box>
             <Box>
                 <SocialsContainer>
