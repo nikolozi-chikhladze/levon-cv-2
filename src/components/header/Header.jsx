@@ -4,7 +4,7 @@ import {memo, useContext} from "react";
 import {CommonContext} from "../../state/Common.context.jsx";
 
 import {HeaderContainer, HeaderTitle, HeaderMenuButton} from './Header.styles.jsx'
-export const Header = memo( () => {
+export const Header = () => {
     const {isHeaderOpen, toggleHeader} = useContext(CommonContext)
 
     return (
@@ -18,6 +18,6 @@ export const Header = memo( () => {
             </HeaderMenuButton>
         </HeaderContainer>
     )
-})
+}
 
 export default Header;

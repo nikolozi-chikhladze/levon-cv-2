@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const SocialsContainer = styled.div``;
 
@@ -17,3 +18,15 @@ export const SocialsText = styled.p`
     }
   };
 `;
+
+export const Socials = () => {
+
+    return (
+        <SocialsContainer>
+            <SocialsText>LinkedIn</SocialsText>
+            <SocialsText>Instagram</SocialsText>
+            <SocialsText>Behance</SocialsText>
+            <SocialsText>Dribble</SocialsText>
+        </SocialsContainer>
+    )
+}

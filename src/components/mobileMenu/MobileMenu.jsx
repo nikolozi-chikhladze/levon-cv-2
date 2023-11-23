@@ -4,6 +4,7 @@ import {MobileMenuText} from "./MobileMenu.styles.jsx";
 import {SocialsContainer, SocialsText} from "../shared/Socials.jsx";
 import {useNavigate} from "react-router-dom";
 import {CommonContext} from "../../state/Common.context.jsx";
+import {useCallback, useContext} from "react";
 
 export const MobileMenu = () => {
     const navigate = useNavigate();

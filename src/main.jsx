@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import HomeScreen from "./screens/Home.screen.jsx";
+import HomeScreen from "./screens/Home/Home.screen.jsx";
 import './reset.css';
 import {CommonContextProvider} from "./state/Common.context.jsx";
+import {ContactScreen} from "./screens/Contact/Contact.screen.jsx";
 
 
 const router = createBrowserRouter([
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/contact",
-        element: <div>Contact page</div>
+        element: <ContactScreen />
     },
 ])
 
