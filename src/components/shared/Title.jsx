@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const TitleContainer = styled.div`
   @media (max-width: 480px) {
@@ -7,21 +8,29 @@ export const TitleContainer = styled.div`
 `;
 
 export const TitleText = styled.h1`
-  font-family: "Helvetica Neue",serif;
+  font-family: "Helvetica Neue", serif;
   font-weight: bold;
   color: #fff;
-  margin-bottom: ${props => props?.marginBottom ?? '0px'};
+  margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
 
   @media (max-width: 480px) {
     font-size: 32px;
     line-height: 39px;
   }
-`
+`;
 
-export const Title = ({text, hasMarginBottom = false, marginBottom}) => {
-    return hasMarginBottom ?
-        <TitleContainer>
-            <TitleText marginBottom={marginBottom}>{text}</TitleText>
-        </TitleContainer> :
-        <TitleText marginBottom={marginBottom}>{text}</TitleText>
-}
+export const Title = ({ text, hasMarginBottom = false, marginBottom }) => {
+  return hasMarginBottom ? (
+    <TitleContainer>
+      <TitleText marginBottom={marginBottom}>{text}</TitleText>
+    </TitleContainer>
+  ) : (
+    <TitleText marginBottom={marginBottom}>{text}</TitleText>
+  );
+};
+
+Title.propTypes = {
+  text: PropTypes.string,
+  hasMarginBottom: PropTypes.bool,
+  marginBottom: PropTypes.string,
+};
