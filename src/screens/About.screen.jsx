@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import { Background } from "../../components/shared/Background.jsx";
-import Header from "../../components/header/Header.jsx";
-import { Footer } from "../../components/footer/Footer.jsx";
-import { CommonContext } from "../../state/Common.context.jsx";
-import { MobileMenu } from "../../components/mobileMenu/MobileMenu.jsx";
-import { Container } from "../../components/shared/Container.jsx";
-import { Title } from "../../components/shared/Title.jsx";
+import { Background } from "../components/shared/Background.jsx";
+import { Header } from "../components/header/Header.jsx";
+import { Footer } from "../components/footer/Footer.jsx";
+import { CommonContext } from "../state/Common.context.jsx";
+import { MobileMenu } from "../components/mobileMenu/MobileMenu.jsx";
+import { Container } from "../components/shared/Container.jsx";
+import { Title } from "../components/shared/Title.jsx";
 import AboutIcon from "/src/assets/about.png?react";
-import { Box } from "../../components/shared/Box.jsx";
-import { TextAccent, TextDescription } from "../../components/shared/Text.jsx";
-import { Socials } from "../../components/shared/Socials.jsx";
-import { WorkTemplate } from "../../components/shared/WorkTemplate.jsx";
-import { Image } from "../../components/shared/Image.jsx";
-import { EXPERIENCE } from "../../data/experience.js";
+import { Box } from "../components/shared/Box.jsx";
+import { TextAccent, TextDescription } from "../components/shared/Text.jsx";
+import { Socials } from "../components/shared/Socials.jsx";
+import { WorkTemplate } from "../components/shared/WorkTemplate.jsx";
+import { Image } from "../components/shared/Image.jsx";
+import { EXPERIENCE } from "../data/experience.js";
 
 export const AboutScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);

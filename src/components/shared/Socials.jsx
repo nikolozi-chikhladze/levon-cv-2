@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeIn } from "./Text";
 
 export const SocialsContainer = styled.div``;
 
@@ -6,6 +7,9 @@ export const SocialsText = styled.p`
   font-family: "Helvetica Neue", serif;
   font-weight: bold;
   color: #fff;
+
+  position: relative;
+  animation: ${fadeIn} 2s linear normal;
 
   @media (max-width: 480px) {
     font-size: 16px;

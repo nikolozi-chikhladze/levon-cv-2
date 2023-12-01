@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomeScreen from "./screens/Home/Home.screen.jsx";
+import { HomeScreen } from "./screens/Home.screen.jsx";
 import { CommonContextProvider } from "./state/Common.context.jsx";
-import { ContactScreen } from "./screens/Contact/Contact.screen.jsx";
-import { WorksScreen } from "./screens/Works/Works.screen.jsx";
-import { AboutScreen } from "./screens/About/About.screen.jsx";
+import { ContactScreen } from "./screens/Contact.screen.jsx";
+import { WorksScreen } from "./screens/Works.screen.jsx";
+import { AboutScreen } from "./screens/About.screen.jsx";
 import { useState } from "react";
-import { WorkScreen } from "./screens/Work/Work.screen.jsx";
+import { WorkScreen } from "./screens/Work.screen.jsx";
 
 const router = createBrowserRouter([
   {

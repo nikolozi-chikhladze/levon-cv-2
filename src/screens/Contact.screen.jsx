@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { Background } from "../../components/shared/Background.jsx";
-import Header from "../../components/header/Header.jsx";
-import { Footer } from "../../components/footer/Footer.jsx";
-import { CommonContext } from "../../state/Common.context.jsx";
-import { MobileMenu } from "../../components/mobileMenu/MobileMenu.jsx";
-import { Box } from "../../components/shared/Box.jsx";
-import { TextDescription, TextTitled } from "../../components/shared/Text.jsx";
-import { Container } from "../../components/shared/Container.jsx";
-import { Socials } from "../../components/shared/Socials.jsx";
-import { Title } from "../../components/shared/Title.jsx";
+import { Background } from "../components/shared/Background.jsx";
+import { Header } from "../components/header/Header.jsx";
+import { Footer } from "../components/footer/Footer.jsx";
+import { CommonContext } from "../state/Common.context.jsx";
+import { MobileMenu } from "../components/mobileMenu/MobileMenu.jsx";
+import { Box } from "../components/shared/Box.jsx";
+import { TextDescription, TextTitled } from "../components/shared/Text.jsx";
+import { Container } from "../components/shared/Container.jsx";
+import { Socials } from "../components/shared/Socials.jsx";
+import { Title } from "../components/shared/Title.jsx";
 
 export const ContactScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);

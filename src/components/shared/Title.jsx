@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { fadeIn } from "./Text";
 
 export const TitleContainer = styled.div`
   @media (max-width: 480px) {
@@ -12,6 +13,9 @@ export const TitleText = styled.h1`
   font-weight: bold;
   color: #fff;
   margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
+
+  position: relative;
+  animation: ${fadeIn} 2s linear normal;
 
   @media (max-width: 480px) {
     font-size: 32px;
