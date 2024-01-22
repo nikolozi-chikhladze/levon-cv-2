@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -7,24 +8,48 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   border-bottom: 2px solid #fff;
   position: relative;
-  
+  border-top: 10px solid #fff;
+  width: 100vw;
+  height: 100%;
 `;
 
-export const HeaderTitleContainer = styled.h1`
+export const HeaderTitleContainer = styled(NavLink)`
+  text-decoration: none;
+
   @media (max-width: 480px) {
     padding: 27px 52px 27px 32px;
+  }
+
+  @media (min-width: 481px) {
+    padding: 27px 0 27px 32px;
   }
 `;
 
 export const HeaderMenuButton = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #fff;
+
+  @media (max-width: 480px) {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 2px solid #fff;
-  
-    @media (max-width: 480px) {
-      padding: 25px 32px;
-    }
+    padding: 25px 32px;
+  }
 `;
 
+export const HeaderMenuContainer = styled.div`
+  display: none;
+  flex-direction: row;
 
+  @media (min-width: 481px) {
+    display: flex;
+  }
+`;
+
+export const HeaderMenuItem = styled(NavLink)`
+  padding: 27px 160px 27px 32px;
+  border-left: 2px solid #fff;
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+`;

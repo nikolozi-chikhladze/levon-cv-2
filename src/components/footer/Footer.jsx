@@ -1,9 +1,10 @@
-import {FooterContainer, FooterText} from "./Footer.styles.jsx";
+import { FooterContainer, FooterText } from "./Footer.styles.jsx";
 
 export const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterText>Levon Kostandyan<br/>© 2023</FooterText>
-        </FooterContainer>
-    )
-}
+  return (
+    <FooterContainer>
+      <FooterText>Levon Kostandyan</FooterText>
+      <FooterText>© 2023</FooterText>
+    </FooterContainer>
+  );
+};

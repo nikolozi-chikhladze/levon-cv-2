@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { fadeIn } from "./Text";
 
-export const SocialsContainer = styled.div``;
+export const SocialsContainer = styled.div`
+  @media (min-width: 481px) {
+    padding: 32px;
+  }
+`;
 
 export const SocialsText = styled.p`
   font-family: "Helvetica Neue", serif;
@@ -19,6 +23,12 @@ export const SocialsText = styled.p`
     &:last-child {
       margin-bottom: 0px;
     }
+  }
+
+  @media (min-width: 481px) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
   }
 `;
 

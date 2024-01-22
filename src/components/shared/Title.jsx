@@ -6,6 +6,10 @@ export const TitleContainer = styled.div`
   @media (max-width: 480px) {
     margin-bottom: 32px;
   }
+
+  @media (min-width: 481px) {
+    margin: 32px;
+  }
 `;
 
 export const TitleText = styled.h1`
@@ -20,6 +24,11 @@ export const TitleText = styled.h1`
   @media (max-width: 480px) {
     font-size: 32px;
     line-height: 39px;
+  }
+
+  @media (min-width: 481px) {
+    font-size: 40px;
+    line-height: 48px;
   }
 `;
 

@@ -26,6 +26,11 @@ export const TextDescription = styled.p`
     font-size: 16px;
     line-height: 26px;
   }
+
+  @media (min-width: 481px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
 `;
 
 export const TextTitled = styled.p`
@@ -39,6 +44,11 @@ export const TextTitled = styled.p`
   @media (max-width: 480px) {
     font-size: 18px;
     line-height: 26px;
+  }
+
+  @media (min-width: 481px) {
+    font-size: 18px;
+    line-height: 22px;
   }
 `;
 
@@ -68,6 +78,11 @@ export const TextRegular = styled.p`
   animation: ${fadeIn} 2s linear normal;
 
   @media (max-width: 480px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: 480px) {
     font-size: 20px;
     line-height: 24px;
   }
