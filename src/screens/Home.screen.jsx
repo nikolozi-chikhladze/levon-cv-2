@@ -44,38 +44,32 @@ export const HomeScreen = () => {
 
     return (
       <HomeContainer>
-        <div
-          style={{ gridArea: "1 / 1 / 5 / 4", border: "2px solid #fff" }}
-        ></div>
-        <div
-          style={{ gridArea: "2 / 4 / 5 / 9", border: "2px solid #fff" }}
-        ></div>
-        <div style={{ gridArea: "1 / 4 / 2 / 8" }}>
-          <Box style={{ borderBottom: "none" }} paddingTop="32px">
-            <Title text={"Senior UX Designer"} />
-          </Box>
-          <Box style={{ borderTop: "none", paddingTop: 0 }}>
-            <TextDescription style={{ marginBottom: "77px" }}>
-              Experienced UX Designer with over ten years of expertise, based in
+        <Box style={{display: "flex", flex: 2, border: "2px solid #fff", borderLeft: "none"}} />
+        <div style={{ display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40 }}>
+          <div style={{display: 'flex', flex: 1}}>
+            <div style={{display: 'flex', flex: 4, flexDirection: 'column'}}>
+              <Box style={{ borderBottom: "none" }}>
+                <Title text={"Senior UX Designer"} />
+              </Box>
+              <Box style={{ borderTop: "none", borderBottom: "none" }}>
+                <TextDescription>
+                Experienced UX Designer with over ten years of expertise, based in
               Yerevan, Armenia. Specializing on complicated systems and huge
               data.
-            </TextDescription>
-          </Box>
-          <Box style={{ paddingRight: 0 }}>
-            <TextTitled>Currently Senior UX Designer at ISAA.</TextTitled>
-          </Box>
-        </div>{" "}
-        {isMobile ? (
-          <Box>
-            <Socials />
-          </Box>
-        ) : (
-          <div style={{ gridArea: "1 / 8 / 2 / 9" }}>
-            <Box style={{ height: "100%", padding: 0, borderBottom: 0 }}>
+                </TextDescription>
+              </Box>
+              <Box style={{ paddingRight: 0 }}>
+                <TextTitled>Currently Senior UX Designer at ISAA.</TextTitled>
+              </Box>
+             
+            </div>
+
+            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0 }}>
               <Socials />
             </Box>
           </div>
-        )}
+          <Box style={{display: 'flex', flex: 1, minHeight: 200}} />
+        </div>
       </HomeContainer>
     );
   };
@@ -83,13 +77,13 @@ export const HomeScreen = () => {
   return (
     <Background>
       <Header text={"Senior UX Designer"} />
-      {!isHeaderOpen ? (
+      {isHeaderOpen ? (
+        <MobileMenu />
+      ) : (
         <Container>
           <Title text={"Levon Kostandyan"} hasMarginBottom />
           {renderContent()}
         </Container>
-      ) : (
-        <MobileMenu />
       )}
       <Footer />
     </Background>

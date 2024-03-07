@@ -1423,19 +1423,19 @@ export const WORKS = [
     title: TITLES.plantyApp,
   },
   {
-    id: "roommate",
+    id: "roommate-app",
     title: TITLES.roommate,
   },
   {
-    id: "list-am",
+    id: "list-am-app",
     title: TITLES.listAm,
   },
   {
-    id: "fin-fly",
+    id: "fin-fly-app",
     title: TITLES.finFly,
   },
   {
-    id: "keeps-me",
+    id: "keeps-me-app",
     title: TITLES.keepsMe,
   },
   {
@@ -1443,19 +1443,19 @@ export const WORKS = [
     title: TITLES.medicalApp,
   },
   {
-    id: "hca-healthcare",
+    id: "hca-healthcare-app",
     title: TITLES.hcaHealthcare,
   },
   {
-    id: "spaarkd",
+    id: "spaarkd-app",
     title: TITLES.spaarkd,
   },
   {
-    id: "inecobank",
+    id: "inecobank-app",
     title: TITLES.inecobank,
   },
   {
-    id: "novartis",
+    id: "novartis-app",
     title: TITLES.novartis,
   },
 ];

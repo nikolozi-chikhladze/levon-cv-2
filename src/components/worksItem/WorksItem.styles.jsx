@@ -7,8 +7,16 @@ export const WorksItemTextContainer = styled.div`
   justify-content: space-between;
   background-color: ${(props) => (props.isFocused ? "#fff" : "none")};
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 480px) {
     padding: 16px 20px;
+  }
+
+  @media (min-width: 481px) {
+    padding: 28px 0px 32px 29px
   }
 `;
 

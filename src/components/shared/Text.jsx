@@ -102,6 +102,11 @@ export const TextTitledBold = styled.p`
     font-size: 32px;
     line-height: 39px;
   }
+
+  @media (min-width: 481px) {
+    font-size: 32px;
+    line-height: 39px;
+  }
 `;
 
 export const TextGroupTitle = styled.p`

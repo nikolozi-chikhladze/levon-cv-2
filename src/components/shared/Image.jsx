@@ -3,7 +3,7 @@ import { fadeIn } from "./Text";
 
 export const Image = styled.img`
   width: 100%;
-
+  object-fit: cover;
   animation: ${fadeIn} 2s linear normal;
 
   @media (max-width: 480px) {

@@ -40,37 +40,36 @@ export const ContactScreen = () => {
 
     return (
       <HomeContainer>
-        <div
-          style={{ gridArea: "1 / 1 / 4 / 2", border: "2px solid #fff" }}
-        ></div>
-        <div
-          style={{ gridArea: "2 / 2 / 4 / 4", border: "2px solid #fff" }}
-        ></div>
-        <div style={{ gridArea: "1 / 2 / 2 / 3" }}>
-          <Box style={{ borderBottom: "none" }}>
-            <Title text={"Contact"} />
-          </Box>
-          <Box style={{ borderTop: "none", borderBottom: "none" }}>
-            <TextDescription>
-              I am always excited to meet new people, whether for work or
-              personal reasons. If you have any questions, comments, or would
-              want to discuss future opportunities, please contact me through
-              the following channels:
-            </TextDescription>
-          </Box>
-          <Box style={{ borderTop: "none" }}>
-            <TextDescription style={{ paddingBottom: "12px" }}>
-              levon.kostandyan@gmail.com
-            </TextDescription>
-            <TextDescription style={{ paddingBottom: "12px" }}>
-              +374 91 017868
-            </TextDescription>
-          </Box>
-        </div>
-        <div style={{ gridArea: "1 / 3 / 2 / 4" }}>
-          <Box style={{ height: "100%", padding: 0, borderBottom: 0 }}>
-            <Socials />
-          </Box>
+        <Box style={{display: "flex", flex: 2, border: "2px solid #fff", borderLeft: "none"}} />
+        <div style={{ display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40 }}>
+          <div style={{display: 'flex', flex: 1}}>
+            <div style={{display: 'flex', flex: 4, flexDirection: 'column'}}>
+              <Box style={{ borderBottom: "none" }}>
+                <Title text={"Contact"} />
+              </Box>
+              <Box style={{ borderTop: "none", borderBottom: "none" }}>
+                <TextDescription>
+                  I am always excited to meet new people, whether for work or
+                  personal reasons. If you have any questions, comments, or would
+                  want to discuss future opportunities, please contact me through
+                  the following channels:
+                </TextDescription>
+              </Box>
+              <Box style={{ borderTop: "none" }}>
+                <TextDescription style={{ paddingBottom: "12px" }}>
+                  levon.kostandyan@gmail.com
+                </TextDescription>
+                <TextDescription style={{ paddingBottom: "12px" }}>
+                  +374 91 017868
+                </TextDescription>
+              </Box>
+            </div>
+
+            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0 }}>
+              <Socials />
+            </Box>
+          </div>
+          <Box style={{display: 'flex', flex: 1, minHeight: 200}} />
         </div>
       </HomeContainer>
     );
