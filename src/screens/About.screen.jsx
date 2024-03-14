@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Background } from "../components/shared/Background.jsx";
 import { Header } from "../components/header/Header.jsx";
 import { Footer } from "../components/footer/Footer.jsx";
@@ -7,6 +7,7 @@ import { MobileMenu } from "../components/mobileMenu/MobileMenu.jsx";
 import { Container, HomeContainer } from "../components/shared/Container.jsx";
 import { Title } from "../components/shared/Title.jsx";
 import AboutIcon from "/public/about.png?react";
+import About2Icon from "/public/about-2.png?react";
 import { Box } from "../components/shared/Box.jsx";
 import { TextAccent, TextDescription } from "../components/shared/Text.jsx";
 import { Socials } from "../components/shared/Socials.jsx";
@@ -19,6 +20,15 @@ import cvPdf from '/public/files/CV_Levon_Kostandian.pdf'
 export const AboutScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
   const { isMobile } = useWindowSize();
+
+  const textContainerRef = useRef(null)
+
+  useEffect(() => {
+    setHeight(textContainerRef.current?.clientHeight)
+  }, [])
+
+  const [height, setHeight] = useState(0)
+  
 
   const renderContent = () => {
     if (isMobile) {
@@ -82,15 +92,16 @@ export const AboutScreen = () => {
 
     return (
       <>
-            {/* 8 col 4 row */}
+          {/* 8 col 4 row */}
           <HomeContainer>
             <Box
-              // style={{ gridArea: "1 / 1 / 5 / 3", border: "2px solid #fff" }}
-              // style={{}}
-              style={{height: `calc(100vh - 90px - 48px)`, display: 'flex', flex: 3, padding: 32, border: "2px solid #fff", borderLeft: 'none', borderRight: 'none'}}
+              style={{
+                minHeight: `calc(100vh - 90px - 48px)`, 
+                height, 
+                display: 'flex', flex: 3, padding: 32, border: "2px solid #fff", borderLeft: 'none', borderRight: 'none',}}
             >
               {/* <Box style={{height: "100%"}}> */}
-                <Image src={AboutIcon} height={'100%'} />
+                <Image src={About2Icon} height="100%" />
               {/* </Box> */}
             </Box>
 
@@ -130,7 +141,7 @@ export const AboutScreen = () => {
           </HomeContainer>
 
           <Container disablePaddingTop>
-            <Title text={"Experience"} hasMarginBottom />
+            <Title text={"Experience"} hasMarginBottom containerStyle={{marginTop: 64}} />
             {EXPERIENCE.map((item, idx) => (
               <WorkTemplate key={`work-template-${idx}`} item={item} isLast={idx == EXPERIENCE.length - 1} />
             ))}
