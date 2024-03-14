@@ -30,14 +30,14 @@ export const WorkScreen = () => {
       <>
       <ScrollRestoration />
       <Background>
-        <Header text={"Senior UX Designer"} />
+        <Header text={"Lead UX Designer"} />
 
         {isHeaderOpen ? (
           <MobileMenu />
         ) : (
           <Container>
-            <WorkHeader text={data.title} />
-            <Image src={`/src/assets/${data.banner}`} />
+            <WorkHeader text={data.title} caseStudyUrl={data.caseStudy} />
+            <Image src={`/${data.banner}`} />
             {data.sections.map((section, sectionIdx) => (
               <>
                 <Box>
@@ -57,7 +57,7 @@ export const WorkScreen = () => {
                       case "image":
                         return (
                           <Image
-                            src={`/src/assets/${dataItem.value}`}
+                            src={`/${dataItem.value}`}
                             marginBottom={"0px"}
                           />
                         );
@@ -95,59 +95,74 @@ export const WorkScreen = () => {
     <>
       <ScrollRestoration />
       <Background>
-        <Header text={"Senior UX Designer"} />
-
-          <Container>
-            <WorkHeader text={data.title} />
-            <div style={{padding: 32, height: 500}}>
-              <Image src={`/src/assets/${data.banner}`} height={"100%"}/>
+        <Header text={"Lead UX Designer"} />
+        <Container style={{marginRight: 40}}>
+          <WorkHeader text={data.title} caseStudyUrl={data.caseStudy} />
+          <div style={{padding: 32, height: 500, borderRight: "2px solid #fff"}}>
+            <Image src={`/${data.banner}`} height={"100%"}/>
+          </div>
+          {data.sections.map((section, sectionIdx) => (
+            <div style={{display: 'flex'}} key={sectionIdx}>
+              <Box style={{
+                display: 'flex', 
+                flex: 1, 
+                borderLeft: "none",
+                ...sectionIdx !== 0 && {borderTop: "none"},
+                padding: 32,
+                lineHeight: '26px'
+                }}>
+                <TextAccent>{section.title}</TextAccent>
+              </Box>
+              <Box style={{
+                display: 'flex', 
+                flex: 3, 
+                flexDirection: 'column', 
+                borderLeft: "none", 
+                ...sectionIdx !== 0 && {borderTop: "none"},
+                padding: 32,
+                marginBottom: 0
+            }}>
+                {section?.data?.map((dataItem) => {
+                  switch (dataItem.type) {
+                    case "text":
+                      return (
+                        <TextDescription
+                          marginBottom={sectionIdx === 0 ? "0px" : "16px"}
+                        >
+                          {dataItem.value}
+                        </TextDescription>
+                      );
+                    case "image":
+                      return (
+                        <Image
+                          src={`/${dataItem.value}`}
+                          marginBottom={"0px"}
+                          style={{marginTop: 16}}
+                        />
+                      );
+                    case "group":
+                      return (
+                        <>
+                          <TextGroupTitle>
+                            {dataItem.value.title}
+                          </TextGroupTitle>
+                          <TextGroupDivider>----------</TextGroupDivider>
+                          {dataItem.value.bullets.map((bullet) => (
+                            <TextDescription key={bullet} marginBottom="32px">
+                              {bullet}
+                            </TextDescription>
+                          ))}
+                        </>
+                      );
+                    default:
+                      break;
+                  }
+                })}
+              </Box>
             </div>
-            {data.sections.map((section, sectionIdx) => (
-              <div style={{display: 'flex'}} key={sectionIdx}>
-                <Box style={{display: 'flex', flex: 1}}>
-                  <TextAccent>{section.title}</TextAccent>
-                </Box>
-                <Box style={{display: 'flex', flex: 3, flexDirection: 'column'}}>
-                  {section?.data?.map((dataItem) => {
-                    switch (dataItem.type) {
-                      case "text":
-                        return (
-                          <TextDescription
-                            marginBottom={sectionIdx === 0 ? "0px" : "16px"}
-                          >
-                            {dataItem.value}
-                          </TextDescription>
-                        );
-                      case "image":
-                        return (
-                          <Image
-                            src={`/src/assets/${dataItem.value}`}
-                            marginBottom={"0px"}
-                          />
-                        );
-                      case "group":
-                        return (
-                          <>
-                            <TextGroupTitle>
-                              {dataItem.value.title}
-                            </TextGroupTitle>
-                            <TextGroupDivider>----------</TextGroupDivider>
-                            {dataItem.value.bullets.map((bullet) => (
-                              <TextDescription key={bullet} marginBottom="32px">
-                                {bullet}
-                              </TextDescription>
-                            ))}
-                          </>
-                        );
-                      default:
-                        break;
-                    }
-                  })}
-                </Box>
-              </div>
-            ))}
-            <WorkPagination previous={data.previousPage} next={data.nextPage} />
-          </Container>
+          ))}
+          <WorkPagination previous={data.previousPage} next={data.nextPage} />
+        </Container>
         <Footer />
       </Background>
     </>

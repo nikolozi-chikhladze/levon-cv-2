@@ -32,13 +32,13 @@ export const TitleText = styled.h1`
   }
 `;
 
-export const Title = ({ text, hasMarginBottom = false, marginBottom }) => {
+export const Title = ({ text, hasMarginBottom = false, marginBottom, id }) => {
   return hasMarginBottom ? (
-    <TitleContainer>
+    <TitleContainer id={id}>
       <TitleText marginBottom={marginBottom}>{text}</TitleText>
     </TitleContainer>
   ) : (
-    <TitleText marginBottom={marginBottom}>{text}</TitleText>
+    <TitleText marginBottom={marginBottom} id={id}>{text}</TitleText>
   );
 };
 

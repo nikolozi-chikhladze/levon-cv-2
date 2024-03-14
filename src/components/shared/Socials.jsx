@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { fadeIn } from "./Text";
+import { Link } from "react-router-dom";
 
 export const SocialsContainer = styled.div`
   @media (min-width: 481px) {
@@ -32,13 +33,28 @@ export const SocialsText = styled.p`
   }
 `;
 
+const LINKS = {
+  linkedIn: "https://www.linkedin.com/in/levon-kostandyan-ba30267b",
+  instagram: "https://www.instagram.com/_form_live?igsh=dHYwY3NieWpmaHc4&utm_source=qr",
+  behance: "https://www.behance.net/SvGravity",
+  dribble: "https://dribbble.com/SvGravity"
+}
+
 export const Socials = () => {
   return (
     <SocialsContainer>
-      <SocialsText>LinkedIn</SocialsText>
-      <SocialsText>Instagram</SocialsText>
-      <SocialsText>Behance</SocialsText>
-      <SocialsText>Dribble</SocialsText>
+      <Link style={{textDecoration: 'none'}} to={LINKS.linkedIn} target="_blank" rel="noopener noreferrer">
+        <SocialsText>LinkedIn</SocialsText>
+      </Link>
+      <Link style={{textDecoration: 'none'}} to={LINKS.instagram} target="_blank" rel="noopener noreferrer">
+        <SocialsText>Instagram</SocialsText>
+      </Link>
+      <Link style={{textDecoration: 'none'}} to={LINKS.behance} target="_blank" rel="noopener noreferrer">
+        <SocialsText>Behance</SocialsText>
+      </Link>
+      <Link style={{textDecoration: 'none'}} to={LINKS.dribble} target="_blank" rel="noopener noreferrer">
+        <SocialsText>Dribble</SocialsText>
+      </Link>
     </SocialsContainer>
   );
 };

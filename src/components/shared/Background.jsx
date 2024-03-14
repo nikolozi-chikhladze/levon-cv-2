@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-export const Background = ({ children }) => (
+export const Background = ({ children, style }) => (
   <div
     style={{
       backgroundColor: "#242424",
@@ -7,6 +7,7 @@ export const Background = ({ children }) => (
       width: "100vw",
       // display: "flex",
       // flexWrap: "wrap",
+      ...style
     }}
   >
     {children}

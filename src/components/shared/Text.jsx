@@ -30,6 +30,10 @@ export const TextDescription = styled.p`
   @media (min-width: 481px) {
     font-size: 16px;
     line-height: 26px;
+
+    /* &:hover {
+      cursor: pointer;
+    } */
   }
 `;
 
@@ -149,5 +153,12 @@ export const WorkPaginationText = styled(NavLink)`
     line-height: 20px;
     padding: 30px 0;
     border: 2px solid #fff;
+  }
+
+  @media (min-width: 481px) {
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    padding: 35px 32px;
   }
 `;

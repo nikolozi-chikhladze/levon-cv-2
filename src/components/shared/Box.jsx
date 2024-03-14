@@ -26,6 +26,7 @@ export const Box = styled.div`
       typeof props.paddingLeft === "string"
         ? props.paddingLeft + "!important"
         : null};
+    border-bottom: 2px solid #fff;
   }
 
   &:last-child {

@@ -1,5 +1,5 @@
-import BurgerIcon from "/src/assets/menu-burger.svg?react";
-import CloseIcon from "/src/assets/menu-close.svg?react";
+import BurgerIcon from  "/public/menu-burger.svg?react";
+import CloseIcon from "/public/menu-close.svg?react";
 import { useContext } from "react";
 import { CommonContext } from "../../state/Common.context.jsx";
 
@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 export const Header = ({ text }) => {
   const { isHeaderOpen, toggleHeader } = useContext(CommonContext);
   return (
-    <HeaderContainer>
+    <HeaderContainer id="header">
       <HeaderTitleContainer to={"/"}>
         <TextRegular>{text}</TextRegular>
       </HeaderTitleContainer>

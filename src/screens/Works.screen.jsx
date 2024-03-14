@@ -17,19 +17,21 @@ export const WorksScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
   const {isMobile} = useWindowSize()
 
-  const [hoveredWorkItem, setHoveredWorkItem] = useState('')
+  const [hoveredWorkItem, setHoveredWorkItem] = useState(WORKS[0])
 
-  const onHover = (item) => {
-    setHoveredWorkItem(item)
+  const onHover = (id) => {
+    setHoveredWorkItem(WORKS.find(i => i.id === id))
   }
 
   const workListRef = useRef(null)
   const heightRef = useRef(null)
 
   useEffect(() => {
-    heightRef.current = workListRef.current.clientHeight
-    console.log('set', heightRef.current)
-  }, [])
+    if (!isMobile) {
+      heightRef.current = workListRef.current?.clientHeight
+      console.log('set', heightRef.current)
+    }
+  }, [isMobile])
   
 
   const renderContent = () => {
@@ -53,15 +55,15 @@ export const WorksScreen = () => {
       <Container>
         <Title text={"Levon Konstandyan"} hasMarginBottom />
         <div style={{display: 'flex'}}>
-          <Box style={{display: 'flex', flex: 1, border: "2px solid #fff", borderLeft: "none", padding: 16, minHeight: heightRef.current}}>
+          <Box style={{display: 'flex', flex: 1, borderTop: "2px solid #fff", borderBottom: 'none', borderLeft: "none", padding: 16, borderRight: 'none', minHeight: 746}}>
             {hoveredWorkItem ?
-              <Image src={`/src/assets/${hoveredWorkItem}-banner.png`} height={heightRef.current} /> : null
+              <Image src={hoveredWorkItem?.cover} height="746px" /> : null
             }
           </Box>
-          <div style={{display: 'flex', flexDirection: 'column', flex: 1, marginRight: 40}} ref={workListRef}>
-            {WORKS.map((item) => (
-                <Box key={item.id} hasPadding={false} style={{margin: 0, padding: 0}}>
-                  <WorksItem text={item.title} id={item.id} onHover={onHover}/>
+          <div style={{display: 'flex', flexDirection: 'column', flex: 1, marginRight: 40, maxHeight: WORKS.length * 78}} ref={workListRef}>
+            {WORKS.map((item, idx) => (
+                <Box key={item.id} hasPadding={false} style={{maxHeight: 78, margin: 0, padding: 0, ...idx !== WORKS.length - 1 ? {borderBottom: 0} : {}}}>
+                  <WorksItem text={item.title} id={item.id} onHover={onHover} isPreSelected={hoveredWorkItem?.id === item.id}/>
                 </Box>
             ))}
           </div>
@@ -71,10 +73,10 @@ export const WorksScreen = () => {
   }
   return (
     <Background>
-      <Header text={"Senior UX Designer"} />
+      <Header text={"Lead UX Designer"} />
       <Outlet />
       {renderContent()}
-      <Footer />
+      <Footer containerStyle={{borderTop: "2px solid #fff"}}/>
     </Background>
   );
 };

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: local('Helvetica Neue'), url(/public/fonts/HelveticaNeueMedium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-weight: 700;
+  src: local('Helvetica Neue'), url(/public/fonts/HelveticaNeueBold.otf) format('opentype');
+}

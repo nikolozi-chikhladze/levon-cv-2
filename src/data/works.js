@@ -13,7 +13,8 @@ const TITLES = {
 
 const WORK_PLANTY_APP_DETAILED = {
   title: TITLES.plantyApp,
-  banner: "planty-app-banner.png",
+  banner: "images/planty/banner.png",
+  caseStudy: "https://www.behance.net/gallery/142507201/Planty-App-%28iOS%29-Case-Study",
   sections: [
     {
       title: "My Role",
@@ -89,7 +90,7 @@ const WORK_PLANTY_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "planty-app-1.png",
+          value: "images/planty/work-item_wireframe.png",
         },
       ],
     },
@@ -130,7 +131,7 @@ const WORK_PLANTY_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "planty-app-2.png",
+          value: "images/planty/work-item_testing.png",
         },
       ],
     },
@@ -159,18 +160,19 @@ const WORK_PLANTY_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "planty-app-3.png",
+          value: "images/planty/work-item_final-ui.png",
         },
       ],
     },
   ],
   previousPage: null,
-  nextPage: "/works/roommate",
+  nextPage: "/works/roommate-app",
 };
 
 const WORK_ROOMMATE_APP_DETAILED = {
   title: TITLES.roommate,
-  banner: "roommate-app-banner.png",
+  banner: "images/roommate/banner.png",
+  caseStudy: "https://www.behance.net/gallery/140674567/Roommate-App-%28iOS%29-Case-Study",
   sections: [
     {
       title: "My Role",
@@ -221,7 +223,7 @@ const WORK_ROOMMATE_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "roommate-app-1.png",
+          value: "images/roommate/work-item_research.png",
         },
       ],
     },
@@ -235,7 +237,7 @@ const WORK_ROOMMATE_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "roommate-app-2.png",
+          value: "images/roommate/work-item_define-users.png",
         },
       ],
     },
@@ -249,7 +251,7 @@ const WORK_ROOMMATE_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "roommate-app-3.png",
+          value: "images/roommate/work-item_ideate.png",
         },
       ],
     },
@@ -263,18 +265,19 @@ const WORK_ROOMMATE_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "roommate-app-4.png",
+          value: "images/roommate/work-item_design.png",
         },
       ],
     },
   ],
   previousPage: "/works/planty-app",
-  nextPage: "/works/list-am",
+  nextPage: "/works/list-am-app",
 };
 
 const WORK_LIST_AM_APP_DETAILED = {
   title: TITLES.listAm,
-  banner: "list-am-app-banner.png",
+  banner: "images/list-am/banner.png",
+  caseStudy: "https://www.behance.net/gallery/145151351/Listam-%28Web%29-Case-Study",
   sections: [
     {
       title: "My Role",
@@ -335,7 +338,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-1.png",
+          value: "images/list-am/work-item_research.png",
         },
       ],
     },
@@ -354,7 +357,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-2.png",
+          value: "images/list-am/work-item_define-users.png",
         },
       ],
     },
@@ -382,7 +385,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-3.png",
+          value: "images/list-am/work-item_value-proposal.png",
         },
       ],
     },
@@ -411,7 +414,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-4.png",
+          value: "images/list-am/work-item_objective-and-goal.png",
         },
       ],
     },
@@ -425,7 +428,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-5.png",
+          value: "images/list-am/work-item_develop.png",
         },
       ],
     },
@@ -444,7 +447,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-6.png",
+          value: "images/list-am/work-item_wireframe.png",
         },
       ],
     },
@@ -458,7 +461,7 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-7.png",
+          value: "images/list-am/work-item_user-testing.png",
         },
       ],
     },
@@ -472,15 +475,16 @@ const WORK_LIST_AM_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "list-am-app-8.png",
+          value: "images/list-am/work-item_design-system.png",
         },
       ],
     },
   ],
-  previousPage: "/works/roommate",
-  nextPage: "/works/fin-fly",
+  previousPage: "/works/roommate-app",
+  nextPage: "/works/medical-app",
 };
 
+// ! IGNORE
 export const WORK_FIN_FLY_APP_DETAILED = {
   title: TITLES.finFly,
   banner: "fin-fly-app-banner.png",
@@ -649,10 +653,11 @@ export const WORK_FIN_FLY_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/list-am",
-  nextPage: "/works/keeps-me",
+  previousPage: "/works/list-am-app",
+  nextPage: "/works/keeps-me-app",
 };
 
+// ! IGNORE
 const WORK_KEEPS_ME_APP_DETAILED = {
   title: TITLES.keepsMe,
   banner: "keeps-me-app-banner.png",
@@ -828,13 +833,14 @@ const WORK_KEEPS_ME_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/fin-fly",
+  previousPage: "/works/list-am-app",
   nextPage: "/works/medical-app",
 };
 
 const WORK_MEDICAL_APP_DETAILED = {
   title: TITLES.medicalApp,
-  banner: "medical-app-banner.png",
+  banner: "images/medical-app/banner.png",
+  caseStudy: "https://www.behance.net/gallery/185396179/Medical-App-Case-Study",
   sections: [
     {
       title: "My Role",
@@ -945,7 +951,7 @@ const WORK_MEDICAL_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "medical-app-1.png",
+          value: "images/medical-app/work-item_user-journey-map.png",
         },
       ],
     },
@@ -959,7 +965,7 @@ const WORK_MEDICAL_APP_DETAILED = {
         },
         {
           type: "image",
-          value: "medical-app-2.png",
+          value: "images/medical-app/work-item_competetive-analysis.png",
         },
       ],
     },
@@ -974,13 +980,13 @@ const WORK_MEDICAL_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/keeps-me",
-  nextPage: "/works/hca-healthcare",
+  previousPage: "/works/list-am-app",
+  nextPage: "/works/hca-healthcare-app",
 };
 
 const WORK_HCA_HEALTHCARE_APP_DETAILED = {
   title: TITLES.hcaHealthcare,
-  banner: "hca-healthcare-app-banner.png",
+  banner: "images/hca/banner.png",
   sections: [
     {
       title: "My Role",
@@ -1048,9 +1054,10 @@ const WORK_HCA_HEALTHCARE_APP_DETAILED = {
     },
   ],
   previousPage: "/works/medical-app",
-  nextPage: "/works/spaarkd",
+  nextPage: "/works/inecobank-app",
 };
 
+// ! IGNORE
 const WORK_SPAARKD_APP_DETAILED = {
   title: TITLES.spaarkd,
   banner: "spaarkd-app-banner.png",
@@ -1140,8 +1147,8 @@ const WORK_SPAARKD_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/hca-healthcare",
-  nextPage: "/works/inecobank",
+  previousPage: "/works/hca-healthcare-app",
+  nextPage: "/works/inecobank-app",
 };
 
 const WORK_INECOBANK_APP_DETAILED = {
@@ -1273,13 +1280,13 @@ const WORK_INECOBANK_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/spaarkd",
-  nextPage: "/works/novartis",
+  previousPage: "/works/hca-healthcare-app",
+  nextPage: "/works/novartis-app",
 };
 
 export const WORK_NOVARTIS_APP_DETAILED = {
   title: TITLES.novartis,
-  banner: "novartis-app-banner.png",
+  banner: "images/novartis/banner.png",
   sections: [
     {
       title: "My Role",
@@ -1386,7 +1393,7 @@ export const WORK_NOVARTIS_APP_DETAILED = {
       ],
     },
   ],
-  previousPage: "/works/inecobank",
+  previousPage: "/works/inecobank-app",
   nextPage: null,
 };
 
@@ -1394,23 +1401,23 @@ export const getAppDetailedData = (app) => {
   switch (app) {
     case "planty-app":
       return WORK_PLANTY_APP_DETAILED;
-    case "roommate":
+    case "roommate-app":
       return WORK_ROOMMATE_APP_DETAILED;
-    case "list-am":
+    case "list-am-app":
       return WORK_LIST_AM_APP_DETAILED;
-    case "fin-fly":
+    case "fin-fly-app":
       return WORK_FIN_FLY_APP_DETAILED;
-    case "keeps-me":
+    case "keeps-me-app":
       return WORK_KEEPS_ME_APP_DETAILED;
     case "medical-app":
       return WORK_MEDICAL_APP_DETAILED;
-    case "hca-healthcare":
+    case "hca-healthcare-app":
       return WORK_HCA_HEALTHCARE_APP_DETAILED;
-    case "spaarkd":
+    case "spaarkd-app":
       return WORK_SPAARKD_APP_DETAILED;
-    case "inecobank":
+    case "inecobank-app":
       return WORK_INECOBANK_APP_DETAILED;
-    case "novartis":
+    case "novartis-app":
       return WORK_NOVARTIS_APP_DETAILED;
     default:
       break;
@@ -1421,35 +1428,40 @@ export const WORKS = [
   {
     id: "planty-app",
     title: TITLES.plantyApp,
+    cover: "/images/planty/cover.png"
   },
   {
     id: "roommate-app",
     title: TITLES.roommate,
+    cover: "/images/roommate/cover.png"
   },
   {
     id: "list-am-app",
     title: TITLES.listAm,
+    cover: "/images/list-am/cover.png"
   },
-  {
-    id: "fin-fly-app",
-    title: TITLES.finFly,
-  },
-  {
-    id: "keeps-me-app",
-    title: TITLES.keepsMe,
-  },
+  // {
+  //   id: "fin-fly-app",
+  //   title: TITLES.finFly,
+  // },
+  // {
+  //   id: "keeps-me-app",
+  //   title: TITLES.keepsMe,
+  // },
   {
     id: "medical-app",
     title: TITLES.medicalApp,
+    cover: "/images/medical-app/cover.png"
   },
   {
     id: "hca-healthcare-app",
     title: TITLES.hcaHealthcare,
+    cover: "/images/hca/cover.png"
   },
-  {
-    id: "spaarkd-app",
-    title: TITLES.spaarkd,
-  },
+  // {
+  //   id: "spaarkd-app",
+  //   title: TITLES.spaarkd,
+  // },
   {
     id: "inecobank-app",
     title: TITLES.inecobank,
@@ -1457,5 +1469,6 @@ export const WORKS = [
   {
     id: "novartis-app",
     title: TITLES.novartis,
+    cover: "/images/novartis/cover.png"
   },
 ];

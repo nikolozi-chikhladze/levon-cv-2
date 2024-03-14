@@ -20,7 +20,7 @@ export const HomeScreen = () => {
       return (
         <>
           <Box style={{ borderBottom: "none" }}>
-            <Title text={"Senior UX Designer"} />
+            <Title text={"Lead UX Designer"} />
           </Box>
           <Box style={{ borderTop: "none" }}>
             <TextDescription>
@@ -31,7 +31,7 @@ export const HomeScreen = () => {
           </Box>
           <Box>
             <TextTitled>
-              Currently Senior UX
+              Currently Lead UX
               <br /> Designer at ISAA.
             </TextTitled>
           </Box>
@@ -41,30 +41,40 @@ export const HomeScreen = () => {
         </>
       );
     }
+    
 
     return (
-      <HomeContainer>
-        <Box style={{display: "flex", flex: 2, border: "2px solid #fff", borderLeft: "none"}} />
+      <HomeContainer style={{height: `calc(100vh - 90px - 48px - 64px - 68px)`, width: '100vw'}}>
+        <Box style={{
+          display: "flex", 
+          flex: 2, 
+          border: "2px solid #fff", 
+          borderLeft: "none", 
+          padding: 32, 
+          borderRight: 'none',
+        }}>
+          {/* <Image src={AboutIcon} style={{objectFit: 'cover', objectPosition: "50% 20%"}} /> */}
+        </Box>
         <div style={{ display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40 }}>
           <div style={{display: 'flex', flex: 1}}>
             <div style={{display: 'flex', flex: 4, flexDirection: 'column'}}>
-              <Box style={{ borderBottom: "none" }}>
-                <Title text={"Senior UX Designer"} />
+              <Box style={{ borderBottom: "none", paddingBottom: 0 }}>
+                <Title text={"Lead UX Designer"} />
               </Box>
-              <Box style={{ borderTop: "none", borderBottom: "none" }}>
+              <Box style={{ borderTop: "none", borderBottom: "none", paddingTop: 16, flex: 10 }}>
                 <TextDescription>
                 Experienced UX Designer with over ten years of expertise, based in
               Yerevan, Armenia. Specializing on complicated systems and huge
               data.
                 </TextDescription>
               </Box>
-              <Box style={{ paddingRight: 0 }}>
-                <TextTitled>Currently Senior UX Designer at ISAA.</TextTitled>
+              <Box style={{ paddingRight: 0, borderBottom: 'none' }}>
+                <TextTitled style={{fontWeight: 700, fontSize: 18, lineHeight: '22px'}}>Currently Lead UX Designer at ISAA.</TextTitled>
               </Box>
              
             </div>
 
-            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0 }}>
+            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0, borderLeft: 'none' }}>
               <Socials />
             </Box>
           </div>
@@ -75,17 +85,17 @@ export const HomeScreen = () => {
   };
 
   return (
-    <Background>
-      <Header text={"Senior UX Designer"} />
+    <Background style={!isMobile && {display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start'}}>
+      <Header text={"Lead UX Designer"}  />
       {isHeaderOpen ? (
         <MobileMenu />
       ) : (
         <Container>
-          <Title text={"Levon Kostandyan"} hasMarginBottom />
+          <Title id="home-title"  text={"Levon Kostandyan"} hasMarginBottom />
           {renderContent()}
         </Container>
       )}
-      <Footer />
+      <Footer  containerStyle={{width: '100vw', alignSelf: 'flex-end'}} />
     </Background>
   );
 };

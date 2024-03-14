@@ -7,7 +7,7 @@ import { useWindowSize } from "../../utils/useWindowSize.jsx";
 
 const RANDOM = Math.random();
 
-export const WorkTemplate = ({ item }) => {
+export const WorkTemplate = ({ item, isLast }) => {
   const { isMobile } = useWindowSize();
   return (
     isMobile ? <>
@@ -38,12 +38,12 @@ export const WorkTemplate = ({ item }) => {
     </> :
       (
         <div style={{display: 'flex'}}>
-          <Box style={{display: 'flex', flex: 1, flexDirection: 'column', borderBottom: "2px solid #fff", borderLeft: 'none'}}>
+          <Box style={{display: 'flex', flex: 1, flexDirection: 'column', ...!isLast && {borderBottom: "none"}, borderLeft: 'none', borderRight: 'none', padding: 32}}>
             <Title text={item.title} marginBottom={"12px"} />
             <TextDescription marginBottom={"20px"}>{item.position}</TextDescription>
             <TextAccent>{item.date}</TextAccent>
           </Box>
-          <Box style={{display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40}}>
+          <Box style={{display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40, ...!isLast && {borderBottom: "none"}, padding: 32}}>
             {item.descriptions.map((description, idx) => (
               <TextDescription
                 key={`${RANDOM}-description-${idx}`}
@@ -53,7 +53,7 @@ export const WorkTemplate = ({ item }) => {
               </TextDescription>
             ))}
             {item.bullets.length > 0 && (
-              <List>
+              <List style={{paddingLeft: 30}}>
                 {item.bullets.map((bullet, idx) => (
                   <ListItem key={`${RANDOM}-item-${idx}`}>
                     <TextDescription>{bullet}</TextDescription>
@@ -74,4 +74,5 @@ WorkTemplate.propTypes = {
     date: PropTypes.string,
     description: PropTypes.arrayOf(PropTypes.string),
   },
+  isLast: PropTypes.bool
 };

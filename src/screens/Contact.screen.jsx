@@ -21,10 +21,7 @@ export const ContactScreen = () => {
         <>
           <Box>
             <TextDescription>
-              I am always excited to meet new people, whether for work or
-              personal reasons. If you have any questions, comments, or would
-              want to discuss future opportunities, please contact me through
-              the following channels:
+              I am always excited to meet new people, whether for work or personal reasons. If you have any questions, comments, or would want to discuss future opportunities, please contact me through the following channels:
             </TextDescription>
           </Box>
           <Box>
@@ -40,7 +37,7 @@ export const ContactScreen = () => {
 
     return (
       <HomeContainer>
-        <Box style={{display: "flex", flex: 2, border: "2px solid #fff", borderLeft: "none"}} />
+        <Box style={{display: "flex", flex: 2, border: "2px solid #fff", borderLeft: "none", borderRight: 'none'}} />
         <div style={{ display: 'flex', flex: 3, flexDirection: 'column', marginRight: 40 }}>
           <div style={{display: 'flex', flex: 1}}>
             <div style={{display: 'flex', flex: 4, flexDirection: 'column'}}>
@@ -49,13 +46,10 @@ export const ContactScreen = () => {
               </Box>
               <Box style={{ borderTop: "none", borderBottom: "none" }}>
                 <TextDescription>
-                  I am always excited to meet new people, whether for work or
-                  personal reasons. If you have any questions, comments, or would
-                  want to discuss future opportunities, please contact me through
-                  the following channels:
+                  I am always excited to meet new people, whether for work or personal reasons. If you have any questions, comments, or would want to discuss future opportunities, please contact me through the following channels:
                 </TextDescription>
               </Box>
-              <Box style={{ borderTop: "none" }}>
+              <Box style={{ borderTop: "none", borderBottom: 'none' }}>
                 <TextDescription style={{ paddingBottom: "12px" }}>
                   levon.kostandyan@gmail.com
                 </TextDescription>
@@ -65,11 +59,11 @@ export const ContactScreen = () => {
               </Box>
             </div>
 
-            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0 }}>
+            <Box style={{ display: "flex", flex: 2, padding: 0, borderBottom: 0, borderLeft: 'none' }}>
               <Socials />
             </Box>
           </div>
-          <Box style={{display: 'flex', flex: 1, minHeight: 200}} />
+          <Box style={{display: 'flex', flex: 1, minHeight: 230}} />
         </div>
       </HomeContainer>
     );
@@ -77,7 +71,7 @@ export const ContactScreen = () => {
 
   return (
     <Background>
-      <Header text={"Senior UX Designer"} />
+      <Header text={"Lead UX Designer"} />
       {isHeaderOpen ? (
         <MobileMenu />
       ) : (
@@ -86,7 +80,9 @@ export const ContactScreen = () => {
           {renderContent()}
         </Container>
       )}
+      {/* <div style={{position: 'absolute', bottom: 0, width: '100%'}}> */}
       <Footer />
+      {/* </div> */}
     </Background>
   );
 };
