@@ -37,7 +37,7 @@ const LINKS = {
   linkedIn: "https://www.linkedin.com/in/levon-kostandyan-ba30267b",
   instagram: "https://www.instagram.com/_form_live?igsh=dHYwY3NieWpmaHc4&utm_source=qr",
   behance: "https://www.behance.net/SvGravity",
-  dribble: "https://dribbble.com/SvGravity"
+  dribbble: "https://dribbble.com/SvGravity"
 }
 
 export const Socials = () => {
@@ -52,8 +52,8 @@ export const Socials = () => {
       <Link style={{textDecoration: 'none'}} to={LINKS.behance} target="_blank" rel="noopener noreferrer">
         <SocialsText>Behance</SocialsText>
       </Link>
-      <Link style={{textDecoration: 'none'}} to={LINKS.dribble} target="_blank" rel="noopener noreferrer">
-        <SocialsText>Dribble</SocialsText>
+      <Link style={{textDecoration: 'none'}} to={LINKS.dribbble} target="_blank" rel="noopener noreferrer">
+        <SocialsText>Dribbble</SocialsText>
       </Link>
     </SocialsContainer>
   );

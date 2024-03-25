@@ -15,68 +15,156 @@ import { Image } from "../components/shared/Image.jsx";
 
 export const WorksScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
-  const {isMobile} = useWindowSize()
+  const { isMobile } = useWindowSize();
 
-  const [hoveredWorkItem, setHoveredWorkItem] = useState(WORKS[0])
+  const [hoveredWorkItem, setHoveredWorkItem] = useState(WORKS[0]);
 
   const onHover = (id) => {
-    setHoveredWorkItem(WORKS.find(i => i.id === id))
-  }
+    setHoveredWorkItem(WORKS.find((i) => i.id === id));
+  };
 
-  const workListRef = useRef(null)
-  const heightRef = useRef(null)
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const [titleHeight, setTitleHeight] = useState(0);
+  const [worksListHeight, setworksListHeight] = useState(0);
+  const [footerHeight, setFooterHeight] = useState(0);
+  const [showImage, setShowImage] = useState(false);
+
+  const headerRef = document.getElementById("header");
+  const titleRef = document.getElementById("works-title");
+  const footerRef = document.getElementById("footer");
+  const worksListRef = useRef(null);
 
   useEffect(() => {
-    if (!isMobile) {
-      heightRef.current = workListRef.current?.clientHeight
-      console.log('set', heightRef.current)
+    if (headerRef && headerRef?.offsetHeight) {
+      setHeaderHeight(headerRef.offsetHeight);
     }
-  }, [isMobile])
-  
+    if (footerRef && footerRef?.offsetHeight) {
+      setFooterHeight(footerRef.offsetHeight);
+    }
+    if (titleRef && titleRef?.offsetHeight) {
+      setTitleHeight(titleRef.offsetHeight);
+    }
+    if (worksListRef.current && worksListRef.current?.offsetHeight) {
+      setworksListHeight(worksListRef.current.offsetHeight);
+    }
+  }, [
+    footerRef,
+    footerRef?.offsetHeight,
+    headerRef,
+    headerRef?.offsetHeight,
+    titleRef,
+    titleRef?.offsetHeight,
+    worksListRef.current?.offsetHeight,
+  ]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowImage(true);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const renderContent = () => {
     if (isMobile) {
-      return (
-        isHeaderOpen ? (
-          <MobileMenu />
-        ) : (
-          <Container>
-            {WORKS.map((item) => (
-              <Box key={item.id} hasPadding={false}>
-                <WorksItem text={item.title} id={item.id} />
-              </Box>
-            ))}
-          </Container>
-        )
-      )
+      return isHeaderOpen ? (
+        <MobileMenu />
+      ) : (
+        <Container style={{ width: "100%" }}>
+          {WORKS.map((item) => (
+            <Box key={item.id} hasPadding={false}>
+              <WorksItem text={item.title} id={item.id} />
+            </Box>
+          ))}
+        </Container>
+      );
     }
 
     return (
-      <Container>
-        <Title text={"Levon Konstandyan"} hasMarginBottom />
-        <div style={{display: 'flex'}}>
-          <Box style={{display: 'flex', flex: 1, borderTop: "2px solid #fff", borderBottom: 'none', borderLeft: "none", padding: 16, borderRight: 'none', minHeight: 746}}>
-            {hoveredWorkItem ?
-              <Image src={hoveredWorkItem?.cover} height="746px" /> : null
-            }
+      <Container style={{ maxHeight: "100vh" }}>
+        <Title text={"Levon Konstandyan"} hasMarginBottom id="works-title" />
+        <div
+          style={{
+            display: "flex",
+            height: `calc(100vh - ${headerHeight}px - ${
+              footerHeight * 2
+            }px - ${titleHeight}px)`,
+          }}
+        >
+          <Box
+            style={{
+              display: "flex",
+              flex: 1,
+              borderTop: "2px solid #fff",
+              borderBottom: "none",
+              borderLeft: "none",
+              padding: 16,
+              borderRight: "none",
+              height: "fit-content",
+              paddingBottom: 32,
+            }}
+          >
+            {hoveredWorkItem && showImage ? (
+              <Image
+                src={hoveredWorkItem?.cover}
+                style={{
+                  height: worksListHeight - 32,
+                  objectPosition: "0% 0%",
+                }}
+              />
+            ) : null}
           </Box>
-          <div style={{display: 'flex', flexDirection: 'column', flex: 1, marginRight: 40, maxHeight: WORKS.length * 78}} ref={workListRef}>
-            {WORKS.map((item, idx) => (
-                <Box key={item.id} hasPadding={false} style={{maxHeight: 78, margin: 0, padding: 0, ...idx !== WORKS.length - 1 ? {borderBottom: 0} : {}}}>
-                  <WorksItem text={item.title} id={item.id} onHover={onHover} isPreSelected={hoveredWorkItem?.id === item.id}/>
-                </Box>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              flex: 1,
+              marginRight: 40,
+            }}
+            id="works-list"
+            ref={worksListRef}
+          >
+            {WORKS.map((item) => (
+              <Box
+                key={item.id}
+                hasPadding={false}
+                style={{ margin: 0, padding: 0, borderBottom: 0 }}
+              >
+                <WorksItem
+                  text={item.title}
+                  id={item.id}
+                  onHover={onHover}
+                  isPreSelected={hoveredWorkItem?.id === item.id}
+                />
+              </Box>
             ))}
           </div>
         </div>
       </Container>
-    )
-  }
+    );
+  };
   return (
-    <Background>
+    <Background
+      style={
+        isMobile && {
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flex-start",
+        }
+      }
+    >
       <Header text={"Lead UX Designer"} />
       <Outlet />
       {renderContent()}
-      <Footer containerStyle={{borderTop: "2px solid #fff"}}/>
+      <Footer
+        containerStyle={{
+          borderTop: "2px solid #fff",
+          width: "100vw",
+          alignSelf: "flex-end",
+        }}
+      />
     </Background>
   );
 };

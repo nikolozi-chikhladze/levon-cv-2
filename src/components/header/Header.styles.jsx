@@ -6,11 +6,14 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #fff;
+  /* border-bottom: 2px solid #fff; */
   position: relative;
-  border-top: 10px solid #fff;
+  /* border-top: 10px solid #fff; */
   width: 100vw;
-  height: 100%;
+
+  @media (max-width: 480px) {
+    height: fit-content;
+  }
 `;
 
 export const HeaderTitleContainer = styled(NavLink)`
@@ -29,7 +32,8 @@ export const HeaderMenuButton = styled.div`
   display: none;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid #fff;
+  position: relative;
+  /* border-left: 2px solid #fff; */
 
   @media (max-width: 480px) {
     display: flex;
@@ -43,13 +47,19 @@ export const HeaderMenuContainer = styled.div`
 
   @media (min-width: 481px) {
     display: flex;
+    height: 100%;
   }
 `;
 
 export const HeaderMenuItem = styled(NavLink)`
   padding: 27px 160px 27px 32px;
-  border-left: 2px solid #fff;
+  /* border-left: 2px solid #fff; */
   display: flex;
   flex: 1;
   text-decoration: none;
+  position: relative;
+
+  @media (min-width: 481px) {
+    height: 100%;
+  }
 `;

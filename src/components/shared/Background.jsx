@@ -2,7 +2,7 @@
 export const Background = ({ children, style }) => (
   <div
     style={{
-      backgroundColor: "#242424",
+      backgroundColor: 'rgb(26, 26, 26)',
       minHeight: "100vh",
       width: "100vw",
       // display: "flex",

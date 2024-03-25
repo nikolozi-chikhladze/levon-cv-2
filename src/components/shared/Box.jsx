@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
+  position: relative;
   flex: 1;
   padding: ${(props) =>
     typeof props.hasPadding === "boolean"
@@ -8,7 +9,7 @@ export const Box = styled.div`
         ? "16px 18px"
         : "none"
       : "16px 18px"};
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   border-bottom: none;
 
   @media (min-width: 481px) {
@@ -26,10 +27,10 @@ export const Box = styled.div`
       typeof props.paddingLeft === "string"
         ? props.paddingLeft + "!important"
         : null};
-    border-bottom: 2px solid #fff;
+    /* border-bottom: 2px solid #fff; */
   }
 
   &:last-child {
-    border-bottom: 2px solid #fff;
+    /* border-bottom: 2px solid #fff; */
   }
 `;

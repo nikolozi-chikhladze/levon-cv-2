@@ -16,10 +16,12 @@ export const WorksItemTextContainer = styled.div`
   }
 
   @media (min-width: 481px) {
-    max-height: 80px;
-    padding: 28px 0px 32px 29px;
-    /* padding-left: 28px; */
-    /* height: 100%; */
+    /* max-height: 80px; */
+    /* padding: 28px 0px 32px 29px; */
+    padding-left: 28px;
+    height: 100%;
+
+    
   }
 `;
 

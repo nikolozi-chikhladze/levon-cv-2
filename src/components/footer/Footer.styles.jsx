@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { fadeIn } from "../shared/Text";
 
 export const FooterContainer = styled.div`
-  border-top: 10px solid #fff;
+  /* border-top: 10px solid #fff; */
+  position: relative;
+  display: flex;
+  align-self: flex-end;
   /* width: 100vw; */
 
   @media (max-width: 480px) {

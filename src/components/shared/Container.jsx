@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 
 export const HomeContainer = styled.div`
+  position: relative;
   display: none;
 
   @media (min-width: 481px) {

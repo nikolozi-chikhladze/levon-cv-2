@@ -1153,7 +1153,7 @@ const WORK_SPAARKD_APP_DETAILED = {
 
 const WORK_INECOBANK_APP_DETAILED = {
   title: TITLES.inecobank,
-  banner: "inecobank-app-banner.png",
+  banner: "images/inecobank/banner.png",
   sections: [
     {
       title: "My Role",
@@ -1465,6 +1465,7 @@ export const WORKS = [
   {
     id: "inecobank-app",
     title: TITLES.inecobank,
+    cover: "/images/inecobank/cover.png"
   },
   {
     id: "novartis-app",
