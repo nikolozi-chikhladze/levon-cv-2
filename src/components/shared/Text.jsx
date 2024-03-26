@@ -7,7 +7,11 @@ export const fadeIn = keyframes`
     bottom: -10px;
   }
 
-  50% {
+  75% {
+    opacity: 0;
+    bottom: -10px;
+  }
+  100% {
     opacity: 1;
     bottom: 0px;
   }
@@ -20,7 +24,10 @@ export const TextDescription = styled.p`
   margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 16px;
@@ -43,7 +50,10 @@ export const TextTitled = styled.p`
   color: #fff;
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2500ms linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 18px;
@@ -64,7 +74,10 @@ export const TextAccent = styled.p`
   margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 20px;
@@ -79,7 +92,10 @@ export const TextRegular = styled.p`
   margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 20px;
@@ -100,7 +116,10 @@ export const TextTitledBold = styled.p`
   margin-bottom: ${(props) => props?.marginBottom ?? "0px"};
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 32px;
@@ -119,7 +138,10 @@ export const TextGroupTitle = styled.p`
   color: #fff;
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 24px;
@@ -134,7 +156,10 @@ export const TextGroupDivider = styled.p`
   font-weight: bold;
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 2s linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 `;
 
 export const WorkPaginationText = styled(NavLink)`
@@ -146,7 +171,10 @@ export const WorkPaginationText = styled(NavLink)`
   text-decoration: none;
 
   position: relative;
-  animation: ${fadeIn} 2s linear normal;
+  /* animation: ${fadeIn} 4000ms linear normal; */
+  animation-name: ${fadeIn};
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 
   @media (max-width: 480px) {
     font-size: 16px;

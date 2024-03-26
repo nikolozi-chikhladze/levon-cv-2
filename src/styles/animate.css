@@ -16,3 +16,23 @@
         width: 100%;
     }
 }
+
+@keyframes menuActive {
+    0% {
+        border-bottom: 0px;
+    }
+    99% {
+        border-bottom: 0px;
+    }
+    100% {
+        border-bottom: 4px solid #fff;
+    }
+}
+
+.isActive {
+    animation-name: menuActive;
+    animation-duration: 1000ms;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+    
+}

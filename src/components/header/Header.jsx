@@ -14,10 +14,12 @@ import { TextRegular, TextTitled } from "../shared/Text.jsx";
 import PropTypes from "prop-types";
 import { AnimatedBorders } from "../shared/AnimatedBorders.jsx";
 import { useWindowSize } from "../../utils/useWindowSize.jsx";
+import { useLocation } from "react-router-dom";
 
 export const Header = ({ text }) => {
   const { isHeaderOpen, toggleHeader } = useContext(CommonContext);
   const { isMobile } = useWindowSize();
+  const { pathname } = useLocation();
 
   return (
     <HeaderContainer id="header" style={{ position: "relative" }}>
@@ -37,17 +39,26 @@ export const Header = ({ text }) => {
           </HeaderMenuButton>
         ) : null}
         <HeaderMenuContainer>
-          <HeaderMenuItem to={"/about"}>
+          <HeaderMenuItem
+            to={"/about"}
+            className={pathname === "/about" && "isActive"}
+          >
             <AnimatedBorders hasBorderLeft={true}>
               <TextTitled>About</TextTitled>
             </AnimatedBorders>
           </HeaderMenuItem>
-          <HeaderMenuItem to={"/works"}>
+          <HeaderMenuItem
+            to={"/works"}
+            className={pathname === "/works" && "isActive"}
+          >
             <AnimatedBorders hasBorderLeft={true}>
               <TextTitled>Works</TextTitled>
             </AnimatedBorders>
           </HeaderMenuItem>
-          <HeaderMenuItem to={"/contact"}>
+          <HeaderMenuItem
+            to={"/contact"}
+            className={pathname === "/contact" && "isActive"}
+          >
             <AnimatedBorders hasBorderLeft={true}>
               <TextTitled>Contact</TextTitled>
             </AnimatedBorders>

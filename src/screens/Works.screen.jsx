@@ -100,7 +100,7 @@ export const WorksScreen = () => {
               footerHeight * 2
             }px - ${titleHeight}px)`,
             position: "relative",
-            left: -80,
+            left: -40,
           }}
         >
           <AnimatedBorders hasBorderTop hasBorderBottom>
@@ -119,6 +119,7 @@ export const WorksScreen = () => {
                   style={{
                     height: worksListHeight - 32,
                     objectPosition: "0% 0%",
+                    paddingLeft: 38,
                   }}
                 />
               ) : null}

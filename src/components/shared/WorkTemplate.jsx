@@ -16,7 +16,7 @@ export const WorkTemplate = ({ item, isLast }) => {
       <Box>
         <AnimatedBorders
           hasBorderTop
-          hasBorderLeft={false}
+          hasBorderLeft
           hasBorderRight
           hasBorderBottom
         >
@@ -28,11 +28,7 @@ export const WorkTemplate = ({ item, isLast }) => {
         </AnimatedBorders>
       </Box>
       <Box>
-        <AnimatedBorders
-          hasBorderLeft={false}
-          hasBorderRight
-          hasBorderBottom={isLast}
-        >
+        <AnimatedBorders hasBorderLeft hasBorderRight hasBorderBottom={isLast}>
           {item.descriptions.map((description, idx) => (
             <TextDescription
               key={`${RANDOM}-description-${idx}`}
@@ -54,7 +50,7 @@ export const WorkTemplate = ({ item, isLast }) => {
       </Box>
     </>
   ) : (
-    <div style={{ display: "flex" }} ref={ref}>
+    <div style={{ display: "flex" }}>
       <Box
         style={{
           display: "flex",

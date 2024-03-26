@@ -119,9 +119,9 @@ export const ContactScreen = () => {
                       <TextDescription style={{ paddingBottom: "12px" }}>
                         levon.kostandyan@gmail.com
                       </TextDescription>
-                      <TextDescription style={{ paddingBottom: "12px" }}>
+                      {/* <TextDescription style={{ paddingBottom: "12px" }}>
                         +374 91 017868
-                      </TextDescription>
+                      </TextDescription> */}
                     </Box>
                   </AnimatedBorders>
                 </div>

@@ -27,7 +27,7 @@ const TopBorder = styled.div`
   background-color: #fff;
   animation-name: horizontalAnimation;
   animation-duration: 1000ms;
-  animation-delay: 750ms;
+  animation-delay: 1000ms;
   animation-direction: normal;
   animation-fill-mode: forwards;
   top: 0px;
@@ -40,7 +40,7 @@ const BottomBorder = styled.div`
   background-color: #fff;
   animation-name: horizontalAnimation;
   animation-duration: 1000ms;
-  animation-delay: 750ms;
+  animation-delay: 1000ms;
   animation-direction: normal;
   animation-fill-mode: forwards;
   bottom: 0px;
