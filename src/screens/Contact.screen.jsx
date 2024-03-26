@@ -10,6 +10,7 @@ import { Container, HomeContainer } from "../components/shared/Container.jsx";
 import { Socials } from "../components/shared/Socials.jsx";
 import { Title } from "../components/shared/Title.jsx";
 import { useWindowSize } from "../utils/useWindowSize.jsx";
+import { AnimatedBorders } from "../components/shared/AnimatedBorders.jsx";
 
 export const ContactScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -38,19 +39,30 @@ export const ContactScreen = () => {
       return (
         <>
           <Box>
-            <TextDescription>
-              I am always excited to meet new people, whether for work or
-              personal reasons. If you have any questions, comments, or would
-              want to discuss future opportunities, please contact me through
-              the following channels:
-            </TextDescription>
+            <AnimatedBorders hasBorderTop hasBorderLeft hasBorderRight>
+              <TextDescription>
+                I am always excited to meet new people, whether for work or
+                personal reasons. If you have any questions, comments, or would
+                want to discuss future opportunities, please contact me through
+                the following channels:
+              </TextDescription>
+            </AnimatedBorders>
           </Box>
           <Box>
-            <TextTitled>Mail:</TextTitled>
-            <TextDescription>levon.kostandyan@gmail.com</TextDescription>
+            <AnimatedBorders hasBorderTop hasBorderLeft hasBorderRight>
+              <TextTitled>Mail:</TextTitled>
+              <TextDescription>levon.kostandyan@gmail.com</TextDescription>
+            </AnimatedBorders>
           </Box>
           <Box>
-            <Socials />
+            <AnimatedBorders
+              hasBorderTop
+              hasBorderLeft
+              hasBorderRight
+              hasBorderBottom
+            >
+              <Socials />
+            </AnimatedBorders>
           </Box>
         </>
       );
@@ -62,62 +74,74 @@ export const ContactScreen = () => {
           height: `calc(100vh - ${headerHeight}px - ${titleHeight}px - ${
             footerHeight * 2
           }px)`,
+          left: -40,
         }}
       >
-        <Box
-          style={{
-            display: "flex",
-            flex: 2,
-            border: "2px solid #fff",
-            borderLeft: "none",
-            borderRight: "none",
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
-            flex: 3,
-            flexDirection: "column",
-            marginRight: 40,
-          }}
-        >
-          <div style={{ display: "flex", flex: 1 }}>
-            <div style={{ display: "flex", flex: 4, flexDirection: "column" }}>
-              <Box style={{ borderBottom: "none" }}>
-                <Title text={"Contact"} />
-              </Box>
-              <Box style={{ borderTop: "none", borderBottom: "none" }}>
-                <TextDescription>
-                  I am always excited to meet new people, whether for work or
-                  personal reasons. If you have any questions, comments, or
-                  would want to discuss future opportunities, please contact me
-                  through the following channels:
-                </TextDescription>
-              </Box>
-              <Box style={{ borderTop: "none", borderBottom: "none" }}>
-                <TextDescription style={{ paddingBottom: "12px" }}>
-                  levon.kostandyan@gmail.com
-                </TextDescription>
-                <TextDescription style={{ paddingBottom: "12px" }}>
-                  +374 91 017868
-                </TextDescription>
-              </Box>
-            </div>
+        <AnimatedBorders hasBorderTop hasBorderBottom hasBorderRight>
+          <Box
+            style={{
+              display: "flex",
+              flex: 2,
+            }}
+          >
+            <AnimatedBorders hasBorderRight />
+          </Box>
+          <div
+            style={{
+              display: "flex",
+              flex: 3,
+              flexDirection: "column",
+            }}
+          >
+            <div style={{ display: "flex", flex: 1, position: "relative" }}>
+              <AnimatedBorders hasBorderBottom>
+                <div
+                  style={{
+                    display: "flex",
+                    flex: 4,
+                    flexDirection: "column",
+                    position: "relative",
+                  }}
+                >
+                  <AnimatedBorders hasBorderRight>
+                    <Box style={{ borderBottom: "none" }}>
+                      <Title text={"Contact"} />
+                    </Box>
+                    <Box style={{ borderTop: "none", borderBottom: "none" }}>
+                      <TextDescription>
+                        I am always excited to meet new people, whether for work
+                        or personal reasons. If you have any questions,
+                        comments, or would want to discuss future opportunities,
+                        please contact me through the following channels:
+                      </TextDescription>
+                    </Box>
+                    <Box style={{ borderTop: "none", borderBottom: "none" }}>
+                      <TextDescription style={{ paddingBottom: "12px" }}>
+                        levon.kostandyan@gmail.com
+                      </TextDescription>
+                      <TextDescription style={{ paddingBottom: "12px" }}>
+                        +374 91 017868
+                      </TextDescription>
+                    </Box>
+                  </AnimatedBorders>
+                </div>
 
-            <Box
-              style={{
-                display: "flex",
-                flex: 2,
-                padding: 0,
-                borderBottom: 0,
-                borderLeft: "none",
-              }}
-            >
-              <Socials />
-            </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                    flex: 2,
+                    padding: 0,
+                    borderBottom: 0,
+                    borderLeft: "none",
+                  }}
+                >
+                  <Socials />
+                </Box>
+              </AnimatedBorders>
+            </div>
+            <Box style={{ display: "flex", flex: 1, minHeight: 230 }} />
           </div>
-          <Box style={{ display: "flex", flex: 1, minHeight: 230 }} />
-        </div>
+        </AnimatedBorders>
       </HomeContainer>
     );
   };

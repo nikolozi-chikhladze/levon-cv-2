@@ -12,6 +12,7 @@ import { WORKS } from "../data/works.js";
 import { useWindowSize } from "../utils/useWindowSize.jsx";
 import { Title } from "../components/shared/Title.jsx";
 import { Image } from "../components/shared/Image.jsx";
+import { AnimatedBorders } from "../components/shared/AnimatedBorders.jsx";
 
 export const WorksScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -73,9 +74,16 @@ export const WorksScreen = () => {
         <MobileMenu />
       ) : (
         <Container style={{ width: "100%" }}>
-          {WORKS.map((item) => (
+          {WORKS.map((item, idx) => (
             <Box key={item.id} hasPadding={false}>
-              <WorksItem text={item.title} id={item.id} />
+              <AnimatedBorders
+                hasBorderLeft
+                hasBorderRight
+                hasBorderTop
+                hasBorderBottom={idx + 1 === WORKS.length}
+              >
+                <WorksItem text={item.title} id={item.id} />
+              </AnimatedBorders>
             </Box>
           ))}
         </Container>
@@ -91,56 +99,61 @@ export const WorksScreen = () => {
             height: `calc(100vh - ${headerHeight}px - ${
               footerHeight * 2
             }px - ${titleHeight}px)`,
+            position: "relative",
+            left: -80,
           }}
         >
-          <Box
-            style={{
-              display: "flex",
-              flex: 1,
-              borderTop: "2px solid #fff",
-              borderBottom: "none",
-              borderLeft: "none",
-              padding: 16,
-              borderRight: "none",
-              height: "fit-content",
-              paddingBottom: 32,
-            }}
-          >
-            {hoveredWorkItem && showImage ? (
-              <Image
-                src={hoveredWorkItem?.cover}
-                style={{
-                  height: worksListHeight - 32,
-                  objectPosition: "0% 0%",
-                }}
-              />
-            ) : null}
-          </Box>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              flex: 1,
-              marginRight: 40,
-            }}
-            id="works-list"
-            ref={worksListRef}
-          >
-            {WORKS.map((item) => (
-              <Box
-                key={item.id}
-                hasPadding={false}
-                style={{ margin: 0, padding: 0, borderBottom: 0 }}
-              >
-                <WorksItem
-                  text={item.title}
-                  id={item.id}
-                  onHover={onHover}
-                  isPreSelected={hoveredWorkItem?.id === item.id}
+          <AnimatedBorders hasBorderTop hasBorderBottom>
+            <Box
+              style={{
+                display: "flex",
+                flex: 1,
+                padding: 16,
+                height: "fit-content",
+                paddingBottom: 32,
+              }}
+            >
+              {hoveredWorkItem && showImage ? (
+                <Image
+                  src={hoveredWorkItem?.cover}
+                  style={{
+                    height: worksListHeight - 32,
+                    objectPosition: "0% 0%",
+                  }}
                 />
-              </Box>
-            ))}
-          </div>
+              ) : null}
+            </Box>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+              }}
+              id="works-list"
+              ref={worksListRef}
+            >
+              {WORKS.map((item, idx) => (
+                <Box
+                  key={item.id}
+                  hasPadding={false}
+                  style={{ margin: 0, padding: 0, borderBottom: 0 }}
+                >
+                  <AnimatedBorders
+                    hasBorderRight
+                    hasBorderLeft
+                    hasBorderBottom={idx + 1 !== WORKS.length}
+                  >
+                    <WorksItem
+                      text={item.title}
+                      id={item.id}
+                      onHover={onHover}
+                      isPreSelected={hoveredWorkItem?.id === item.id}
+                    />
+                  </AnimatedBorders>
+                </Box>
+              ))}
+            </div>
+          </AnimatedBorders>
         </div>
       </Container>
     );
@@ -160,7 +173,6 @@ export const WorksScreen = () => {
       {renderContent()}
       <Footer
         containerStyle={{
-          borderTop: "2px solid #fff",
           width: "100vw",
           alignSelf: "flex-end",
         }}

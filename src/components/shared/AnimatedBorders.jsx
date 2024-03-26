@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 
 export const AnimatedBorders = (props) => {
@@ -20,23 +20,6 @@ export const AnimatedBorders = (props) => {
     </>
   );
 };
-
-AnimatedBorders.propTypes = {
-  hasBorderLeft: Boolean,
-  hasBorderRight: Boolean,
-  hasBorderTop: Boolean,
-  hasBorderBottom: Boolean,
-  children: React.Node,
-};
-
-const VerticalBorder = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 2px;
-  background-color: #fff;
-  animation-name: verticalAnimation;
-  animation-duration: 1000ms;
-`;
 
 const TopBorder = styled.div`
   position: absolute;

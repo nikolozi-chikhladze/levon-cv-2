@@ -152,7 +152,6 @@ export const WorkPaginationText = styled(NavLink)`
     font-size: 16px;
     line-height: 20px;
     padding: 30px 0;
-    border: 2px solid #fff;
   }
 
   @media (min-width: 481px) {

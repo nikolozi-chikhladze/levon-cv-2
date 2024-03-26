@@ -1,27 +1,45 @@
 import { useWindowSize } from "../../utils/useWindowSize";
+import { AnimatedBorders } from "./AnimatedBorders";
 import { Box } from "./Box";
 import { WorkPaginationText } from "./Text";
 import PropTypes from "prop-types";
 
 export const WorkPagination = ({ previous, next }) => {
-  const { isMobile } = useWindowSize()
+  const { isMobile } = useWindowSize();
   if (isMobile) {
     return (
       <div
         style={{
           display: "flex",
           flexDirection: "row",
+          position: "relative",
         }}
       >
-        <WorkPaginationText
-          to={previous}
-          style={!previous ? { color: "#d9d9d9" } : {}}
+        <AnimatedBorders
+          hasBorderTop
+          hasBorderBottom
+          hasBorderLeft
+          hasBorderRight
         >
-          Previous page
-        </WorkPaginationText>
-        <WorkPaginationText to={next} style={!next ? { color: "#d1d1d1" } : {}}>
-          Next page
-        </WorkPaginationText>
+          <Box>
+            <AnimatedBorders hasBorderRight>
+              <WorkPaginationText
+                to={previous}
+                style={!previous ? { color: "#d9d9d9" } : {}}
+              >
+                Previous page
+              </WorkPaginationText>
+            </AnimatedBorders>
+          </Box>
+          <Box>
+            <WorkPaginationText
+              to={next}
+              style={!next ? { color: "#d1d1d1" } : {}}
+            >
+              Next page
+            </WorkPaginationText>
+          </Box>
+        </AnimatedBorders>
       </div>
     );
   }
@@ -31,22 +49,39 @@ export const WorkPagination = ({ previous, next }) => {
       style={{
         display: "flex",
         flexDirection: "row",
+        position: "relative",
       }}
     >
-      <Box style={{padding: 0, borderLeft: 'none', borderRight: 'none', borderTop: 'none'}}>
-        <WorkPaginationText
-          to={previous}
-          style={!previous ? { color: "#d9d9d9" } : {}}
+      <AnimatedBorders hasBorderBottom>
+        <Box
+          style={{
+            padding: 0,
+            borderLeft: "none",
+            borderRight: "none",
+            borderTop: "none",
+          }}
         >
-          Previous page
-        </WorkPaginationText>
-      </Box>
-      <Box style={{flex: 10, borderTop: 'none'}} />
-      <Box style={{padding: 0, borderLeft: 'none', borderTop: 'none'}}>
-        <WorkPaginationText to={next} style={!next ? { color: "#d1d1d1" } : {}}>
-          Next page
-        </WorkPaginationText>
-      </Box>
+          <AnimatedBorders hasBorderRight>
+            <WorkPaginationText
+              to={previous}
+              style={!previous ? { color: "#d9d9d9" } : {}}
+            >
+              Previous page
+            </WorkPaginationText>
+          </AnimatedBorders>
+        </Box>
+        <Box style={{ flex: 10, borderTop: "none" }} />
+        <Box style={{ padding: 0, borderLeft: "none", borderTop: "none" }}>
+          <AnimatedBorders hasBorderRight hasBorderLeft>
+            <WorkPaginationText
+              to={next}
+              style={!next ? { color: "#d1d1d1" } : {}}
+            >
+              Next page
+            </WorkPaginationText>
+          </AnimatedBorders>
+        </Box>
+      </AnimatedBorders>
     </div>
   );
 };

@@ -16,6 +16,7 @@ import { Image } from "../components/shared/Image.jsx";
 import { EXPERIENCE } from "../data/experience.js";
 import { useWindowSize } from "../utils/useWindowSize.jsx";
 import cvPdf from "/public/files/CV_Levon_Kostandian.pdf";
+import { AnimatedBorders } from "../components/shared/AnimatedBorders.jsx";
 
 export const AboutScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -53,44 +54,58 @@ export const AboutScreen = () => {
             {/* <Title text={"Levon Kostandyan"} hasMarginBottom /> */}
             <Image src={AboutIcon} />
             <Box>
-              <Title text={"About"} />
+              <AnimatedBorders
+                hasBorderBottom
+                hasBorderTop
+                hasBorderRight
+                hasBorderLeft
+              >
+                <Title text={"About"} />
+              </AnimatedBorders>
             </Box>
             <Box>
-              <TextDescription>
-                Hello, my name is Levon, and I am thrilled to introduce myself
-                as a highly skilled UX Designer with over 10 years of experience
-                in the industry. Throughout my career, I have developed a deep
-                commitment to creating and maintaining design process that
-                elevate user experience and deliver visual consistency across a
-                wide range of businesses.
-              </TextDescription>
-              <br />
-              <TextDescription>
-                My expertise in UX design has been honed through my work with
-                both digital agencies and large international technology
-                companies. This diverse range of experiences has equipped me
-                with the skills needed to tackle complex design challenges and
-                deliver innovative solutions that meet the unique needs of each
-                client. My approach to UX design is rooted in a deep
-                understanding of user behavior, coupled with a passion for
-                creating intuitive and engaging user experiences. Whether I am
-                working on a website, mobile app, or other digital platform, I
-                always strive to deliver a design that not only looks great but
-                also meets the needs of the end-user. In addition to my
-                extensive experience in UX design, I am also highly skilled in
-                project management, team leadership, and stakeholder
-                communication. I understand the importance of working
-                collaboratively with clients and stakeholders to ensure that the
-                final product meets their needs and exceeds their expectations.
-              </TextDescription>
+              <AnimatedBorders hasBorderLeft hasBorderRight hasBorderBottom>
+                <TextDescription>
+                  Hello, my name is Levon, and I am thrilled to introduce myself
+                  as a highly skilled UX Designer with over 10 years of
+                  experience in the industry. Throughout my career, I have
+                  developed a deep commitment to creating and maintaining design
+                  process that elevate user experience and deliver visual
+                  consistency across a wide range of businesses.
+                </TextDescription>
+                <br />
+                <TextDescription>
+                  My expertise in UX design has been honed through my work with
+                  both digital agencies and large international technology
+                  companies. This diverse range of experiences has equipped me
+                  with the skills needed to tackle complex design challenges and
+                  deliver innovative solutions that meet the unique needs of
+                  each client. My approach to UX design is rooted in a deep
+                  understanding of user behavior, coupled with a passion for
+                  creating intuitive and engaging user experiences. Whether I am
+                  working on a website, mobile app, or other digital platform, I
+                  always strive to deliver a design that not only looks great
+                  but also meets the needs of the end-user. In addition to my
+                  extensive experience in UX design, I am also highly skilled in
+                  project management, team leadership, and stakeholder
+                  communication. I understand the importance of working
+                  collaboratively with clients and stakeholders to ensure that
+                  the final product meets their needs and exceeds their
+                  expectations.
+                </TextDescription>
+              </AnimatedBorders>
             </Box>
             <Box>
-              <a href={cvPdf} download="CV_Levon_Kostandian">
-                <TextAccent decoration={"underline"}>Download CV</TextAccent>
-              </a>
+              <AnimatedBorders hasBorderLeft hasBorderRight hasBorderBottom>
+                <a href={cvPdf} download="CV_Levon_Kostandian">
+                  <TextAccent decoration={"underline"}>Download CV</TextAccent>
+                </a>
+              </AnimatedBorders>
             </Box>
             <Box>
-              <Socials />
+              <AnimatedBorders hasBorderLeft hasBorderRight hasBorderBottom>
+                <Socials />
+              </AnimatedBorders>
             </Box>
           </Container>
 
@@ -101,7 +116,11 @@ export const AboutScreen = () => {
               containerStyle={{ marginTop: 24 }}
             />
             {EXPERIENCE.map((item, idx) => (
-              <WorkTemplate key={`work-template-${idx}`} item={item} />
+              <WorkTemplate
+                key={`work-template-${idx}`}
+                item={item}
+                isLast={idx + 1 === EXPERIENCE.length}
+              />
             ))}
           </Container>
         </>
@@ -111,88 +130,96 @@ export const AboutScreen = () => {
     return (
       <>
         {/* 8 col 4 row */}
-        <HomeContainer>
-          <Box
-            style={{
-              // minHeight: `calc(100vh - 90px - 48px)`,
-              height,
-              display: "flex",
-              flex: 3,
-              padding: 32,
-              border: "2px solid #fff",
-              borderLeft: "none",
-              borderRight: "none",
-            }}
-          >
-            {/* <Box style={{height: "100%"}}> */}
-            {showImage && (
-              <Image src={About2Icon} style={{ height: secondSegmentHeight }} />
-            )}
-            {/* </Box> */}
-          </Box>
-
-          <div
-            // style={{gridArea: "1 / 3 / 4 / 7"}}
-            style={{ display: "flex", flex: 4, flexDirection: "column" }}
-            id="second-segment"
-          >
-            <Box style={{ height: "100%", flex: 20, borderBottom: "none" }}>
-              <Title text={"About"} />
-              <TextDescription style={{ marginTop: 16 }}>
-                Hello, my name is Levon, and I am thrilled to introduce myself
-                as a highly skilled UX Designer with over 10 years of experience
-                in the industry. Throughout my career, I have developed a deep
-                commitment to creating and maintaining design process that
-                elevate user experience and deliver visual consistency across a
-                wide range of businesses.
-                <br />
-                <br />
-                My expertise in UX design has been honed through my work with
-                both digital agencies and large international technology
-                companies. This diverse range of experiences has equipped me
-                with the skills needed to tackle complex design challenges and
-                deliver innovative solutions that meet the unique needs of each
-                client.
-                <br />
-                <br />
-                My approach to UX design is rooted in a deep understanding of
-                user behavior, coupled with a passion for creating intuitive and
-                engaging user experiences. Whether I am working on a website,
-                mobile app, or other digital platform, I always strive to
-                deliver a design that not only looks great but also meets the
-                needs of the end-user.
-                <br />
-                <br />
-                In addition to my extensive experience in UX design, I am also
-                highly skilled in project management, team leadership, and
-                stakeholder communication. I understand the importance of
-                working collaboratively with clients and stakeholders to ensure
-                that the final product meets their needs and exceeds their
-                expectations.
-              </TextDescription>
-            </Box>
-
+        <HomeContainer style={{ left: -40 }}>
+          <AnimatedBorders hasBorderTop hasBorderBottom hasBorderRight>
             <Box
               style={{
-                height: "100%",
-                flex: 1,
-                alignItems: "center",
+                // minHeight: `calc(100vh - 90px - 48px)`,
+                height,
                 display: "flex",
+                flex: 3,
+                padding: 32,
               }}
             >
-              <a style={{}} href={cvPdf} download="CV_Levon_Kostandian">
-                <TextAccent decoration={"underline"}>Download CV</TextAccent>
-              </a>
+              <AnimatedBorders hasBorderRight>
+                {showImage && (
+                  <Image
+                    src={About2Icon}
+                    style={{ height: secondSegmentHeight }}
+                  />
+                )}
+              </AnimatedBorders>
             </Box>
-          </div>
-          <div
-            // style={{ gridArea: "1 / 7 / 5 / 8" }}
-            style={{ display: "flex", flex: 2, marginRight: 40 }}
-          >
-            <Box style={{ padding: 0, marginBottom: 0, borderLeft: "none" }}>
-              <Socials />
-            </Box>
-          </div>
+
+            <div
+              // style={{gridArea: "1 / 3 / 4 / 7"}}
+              style={{ display: "flex", flex: 4, flexDirection: "column" }}
+              id="second-segment"
+            >
+              <Box style={{ height: "100%", flex: 20, borderBottom: "none" }}>
+                <AnimatedBorders hasBorderRight>
+                  <Title text={"About"} />
+                  <TextDescription style={{ marginTop: 16 }}>
+                    Hello, my name is Levon, and I am thrilled to introduce
+                    myself as a highly skilled UX Designer with over 10 years of
+                    experience in the industry. Throughout my career, I have
+                    developed a deep commitment to creating and maintaining
+                    design process that elevate user experience and deliver
+                    visual consistency across a wide range of businesses.
+                    <br />
+                    <br />
+                    My expertise in UX design has been honed through my work
+                    with both digital agencies and large international
+                    technology companies. This diverse range of experiences has
+                    equipped me with the skills needed to tackle complex design
+                    challenges and deliver innovative solutions that meet the
+                    unique needs of each client.
+                    <br />
+                    <br />
+                    My approach to UX design is rooted in a deep understanding
+                    of user behavior, coupled with a passion for creating
+                    intuitive and engaging user experiences. Whether I am
+                    working on a website, mobile app, or other digital platform,
+                    I always strive to deliver a design that not only looks
+                    great but also meets the needs of the end-user.
+                    <br />
+                    <br />
+                    In addition to my extensive experience in UX design, I am
+                    also highly skilled in project management, team leadership,
+                    and stakeholder communication. I understand the importance
+                    of working collaboratively with clients and stakeholders to
+                    ensure that the final product meets their needs and exceeds
+                    their expectations.
+                  </TextDescription>
+                </AnimatedBorders>
+              </Box>
+
+              <Box
+                style={{
+                  height: "100%",
+                  flex: 1,
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <AnimatedBorders hasBorderTop hasBorderRight>
+                  <a style={{}} href={cvPdf} download="CV_Levon_Kostandian">
+                    <TextAccent decoration={"underline"}>
+                      Download CV
+                    </TextAccent>
+                  </a>
+                </AnimatedBorders>
+              </Box>
+            </div>
+            <div
+              // style={{ gridArea: "1 / 7 / 5 / 8" }}
+              style={{ display: "flex", flex: 2, marginRight: 40 }}
+            >
+              <Box style={{ padding: 0, marginBottom: 0, borderLeft: "none" }}>
+                <Socials />
+              </Box>
+            </div>
+          </AnimatedBorders>
         </HomeContainer>
 
         <Container disablePaddingTop>
@@ -228,8 +255,10 @@ export const AboutScreen = () => {
         <MobileMenu />
       ) : (
         <Container>
-          <Title text={"Levon Kostandyan"} hasMarginBottom />
-          {renderContent()}
+          <AnimatedBorders hasBorderBottom>
+            <Title text={"Levon Kostandyan"} hasMarginBottom />
+            {renderContent()}
+          </AnimatedBorders>
         </Container>
       )}
       <Footer containerStyle={{ width: "100vw", alignSelf: "flex-end" }} />

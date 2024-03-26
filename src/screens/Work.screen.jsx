@@ -18,6 +18,7 @@ import {
 import { Image } from "../components/shared/Image";
 import { WorkPagination } from "../components/shared/WorkPagination";
 import { useWindowSize } from "../utils/useWindowSize";
+import { AnimatedBorders } from "../components/shared/AnimatedBorders";
 
 export const WorkScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -49,18 +50,27 @@ export const WorkScreen = () => {
               {data.sections.map((section, sectionIdx) => (
                 <>
                   <Box>
-                    <TextAccent>{section.title}</TextAccent>
+                    <AnimatedBorders
+                      hasBorderLeft
+                      hasBorderRight
+                      hasBorderTop
+                      hasBorderBottom
+                    >
+                      <TextAccent>{section.title}</TextAccent>
+                    </AnimatedBorders>
                   </Box>
                   <Box>
                     {section?.data?.map((dataItem) => {
                       switch (dataItem.type) {
                         case "text":
                           return (
-                            <TextDescription
-                              marginBottom={sectionIdx === 0 ? "0px" : "16px"}
-                            >
-                              {dataItem.value}
-                            </TextDescription>
+                            <AnimatedBorders hasBorderLeft hasBorderRight>
+                              <TextDescription
+                                marginBottom={sectionIdx === 0 ? "0px" : "16px"}
+                              >
+                                {dataItem.value}
+                              </TextDescription>
+                            </AnimatedBorders>
                           );
                         case "image":
                           return (
@@ -71,20 +81,22 @@ export const WorkScreen = () => {
                           );
                         case "group":
                           return (
-                            <>
-                              <TextGroupTitle>
-                                {dataItem.value.title}
-                              </TextGroupTitle>
-                              <TextGroupDivider>----------</TextGroupDivider>
-                              {dataItem.value.bullets.map((bullet) => (
-                                <TextDescription
-                                  key={bullet}
-                                  marginBottom="32px"
-                                >
-                                  {bullet}
-                                </TextDescription>
-                              ))}
-                            </>
+                            <AnimatedBorders hasBorderLeft hasBorderRight>
+                              <Box>
+                                <TextGroupTitle>
+                                  {dataItem.value.title}
+                                </TextGroupTitle>
+                                <TextGroupDivider>----------</TextGroupDivider>
+                                {dataItem.value.bullets.map((bullet) => (
+                                  <TextDescription
+                                    key={bullet}
+                                    marginBottom="32px"
+                                  >
+                                    {bullet}
+                                  </TextDescription>
+                                ))}
+                              </Box>
+                            </AnimatedBorders>
                           );
                         default:
                           break;
@@ -112,10 +124,10 @@ export const WorkScreen = () => {
         <Header text={"Lead UX Designer"} />
         <Container style={{ marginRight: 40 }}>
           <WorkHeader text={data.title} caseStudyUrl={data.caseStudy} />
-          <div
-            style={{ padding: 32, height: 500, borderRight: "2px solid #fff" }}
-          >
-            <Image src={`/${data.banner}`} height={"100%"} />
+          <div style={{ padding: 32, height: 500, position: "relative" }}>
+            <AnimatedBorders hasBorderRight hasBorderBottom>
+              <Image src={`/${data.banner}`} height={"100%"} />
+            </AnimatedBorders>
           </div>
           {data.sections.map((section, sectionIdx) => (
             <div style={{ display: "flex" }} key={sectionIdx}>
@@ -129,7 +141,9 @@ export const WorkScreen = () => {
                   lineHeight: "26px",
                 }}
               >
-                <TextAccent>{section.title}</TextAccent>
+                <AnimatedBorders hasBorderRight hasBorderBottom>
+                  <TextAccent>{section.title}</TextAccent>
+                </AnimatedBorders>
               </Box>
               <Box
                 style={{
@@ -140,17 +154,20 @@ export const WorkScreen = () => {
                   ...(sectionIdx !== 0 && { borderTop: "none" }),
                   padding: 32,
                   marginBottom: 0,
+                  position: "relative",
                 }}
               >
                 {section?.data?.map((dataItem) => {
                   switch (dataItem.type) {
                     case "text":
                       return (
-                        <TextDescription
-                          marginBottom={sectionIdx === 0 ? "0px" : "16px"}
-                        >
-                          {dataItem.value}
-                        </TextDescription>
+                        <AnimatedBorders hasBorderRight hasBorderBottom>
+                          <TextDescription
+                            marginBottom={sectionIdx === 0 ? "0px" : "16px"}
+                          >
+                            {dataItem.value}
+                          </TextDescription>
+                        </AnimatedBorders>
                       );
                     case "image":
                       return (
@@ -162,7 +179,11 @@ export const WorkScreen = () => {
                       );
                     case "group":
                       return (
-                        <>
+                        <AnimatedBorders
+                          hasBorderLeft={isMobile}
+                          hasBorderRight
+                          hasBorderBottom
+                        >
                           <TextGroupTitle>
                             {dataItem.value.title}
                           </TextGroupTitle>
@@ -172,7 +193,7 @@ export const WorkScreen = () => {
                               {bullet}
                             </TextDescription>
                           ))}
-                        </>
+                        </AnimatedBorders>
                       );
                     default:
                       break;
