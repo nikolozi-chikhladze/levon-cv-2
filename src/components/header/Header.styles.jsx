@@ -61,5 +61,7 @@ export const HeaderMenuItem = styled(NavLink)`
 
   @media (min-width: 481px) {
     height: 100%;
+    min-height: 80px;
   }
+
 `;
