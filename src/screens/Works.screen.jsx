@@ -59,6 +59,14 @@ export const WorksScreen = () => {
   ]);
 
   useEffect(() => {
+    WORKS.forEach(work => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = work.cover;
+      document.head.appendChild(link);
+    })
+
     const timeout = setTimeout(() => {
       setShowImage(true);
     }, 100);
@@ -113,16 +121,15 @@ export const WorksScreen = () => {
                 paddingBottom: 32,
               }}
             >
-              {hoveredWorkItem && showImage ? (
                 <Image
                   src={hoveredWorkItem?.cover}
                   style={{
                     height: worksListHeight - 32,
                     objectPosition: "0% 0%",
                     paddingLeft: 38,
+                    opacity: !hoveredWorkItem?.cover && 0
                   }}
                 />
-              ) : null}
             </Box>
             <div
               style={{

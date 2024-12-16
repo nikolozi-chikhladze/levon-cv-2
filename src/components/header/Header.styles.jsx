@@ -53,7 +53,6 @@ export const HeaderMenuContainer = styled.div`
 
 export const HeaderMenuItem = styled(NavLink)`
   padding: 27px 160px 27px 32px;
-  /* border-left: 2px solid #fff; */
   display: flex;
   flex: 1;
   text-decoration: none;

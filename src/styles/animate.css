@@ -19,13 +19,13 @@
 
 @keyframes menuActive {
     0% {
-        border-bottom: 0px;
+        border-bottom: 6px solid transparent;
     }
     99% {
-        border-bottom: 0px;
+        border-bottom: 6px solid transparent;
     }
     100% {
-        border-bottom: 4px solid #fff;
+        border-bottom: 6px solid #fff;
     }
 }
 
