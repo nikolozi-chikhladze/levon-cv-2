@@ -97,8 +97,7 @@ export const HomeScreen = () => {
               flex: 2,
               // border: "2px solid #fff",
               borderLeft: "none",
-              padding: 32,
-              paddingRight: 0,
+              padding: 0,
               borderRight: "none",
             }}
           >
