@@ -11,6 +11,7 @@ import { Title } from "../components/shared/Title.jsx";
 import { TextDescription, TextTitled } from "../components/shared/Text.jsx";
 import { useWindowSize } from "../utils/useWindowSize.jsx";
 import { AnimatedBorders } from "../components/shared/AnimatedBorders.jsx";
+import { Logo3D } from '../components/shared/3DLogo.jsx'
 
 export const HomeScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -97,11 +98,12 @@ export const HomeScreen = () => {
               // border: "2px solid #fff",
               borderLeft: "none",
               padding: 32,
+              paddingRight: 0,
               borderRight: "none",
             }}
           >
             <AnimatedBorders hasBorderRight />
-            {/* <Image src={AboutIcon} style={{objectFit: 'cover', objectPosition: "50% 20%"}} /> */}
+            <Logo3D />
           </Box>
           <div
             style={{
