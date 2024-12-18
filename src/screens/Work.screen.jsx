@@ -46,7 +46,10 @@ export const WorkScreen = () => {
           ) : (
             <Container>
               <WorkHeader text={data.title} caseStudyUrl={data.caseStudy} />
-              <Image src={`/${data.banner}`} />
+              <Image
+                className="animate__animated animate__fadeInLeft"
+                src={`/${data.banner}`}
+              />
               {data.sections.map((section, sectionIdx) => (
                 <>
                   <Box>
@@ -75,6 +78,7 @@ export const WorkScreen = () => {
                         case "image":
                           return (
                             <Image
+                              className="animate__animated animate__fadeInLeft"
                               src={`/${dataItem.value}`}
                               marginBottom={"0px"}
                             />
@@ -126,7 +130,11 @@ export const WorkScreen = () => {
           <WorkHeader text={data.title} caseStudyUrl={data.caseStudy} />
           <div style={{ padding: 32, height: 500, position: "relative" }}>
             <AnimatedBorders hasBorderRight hasBorderBottom>
-              <Image src={`/${data.banner}`} height={"100%"} />
+              <Image
+                className="animate__animated animate__fadeInLeft"
+                src={`/${data.banner}`}
+                height={"100%"}
+              />
             </AnimatedBorders>
           </div>
           {data.sections.map((section, sectionIdx) => (
@@ -172,6 +180,7 @@ export const WorkScreen = () => {
                     case "image":
                       return (
                         <Image
+                          className="animate__animated animate__fadeInLeft"
                           src={`/${dataItem.value}`}
                           marginBottom={"0px"}
                           style={{ marginTop: 16 }}

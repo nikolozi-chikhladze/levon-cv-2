@@ -52,7 +52,10 @@ export const AboutScreen = () => {
         <>
           <Container style={{ padding: 0 }}>
             {/* <Title text={"Levon Kostandyan"} hasMarginBottom /> */}
-            <Image src={AboutIcon} />
+            <Image
+              className="animate__animated animate__fadeInLeft"
+              src={AboutIcon}
+            />
             <Box>
               <AnimatedBorders
                 hasBorderBottom
@@ -144,6 +147,7 @@ export const AboutScreen = () => {
               <AnimatedBorders hasBorderRight>
                 {showImage && (
                   <Image
+                    className="animate__animated animate__fadeInLeft"
                     src={About2Icon}
                     style={{ height: secondSegmentHeight }}
                   />

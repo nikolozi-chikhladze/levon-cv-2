@@ -6,8 +6,8 @@ import { WorksScreen } from "./screens/Works.screen.jsx";
 import { AboutScreen } from "./screens/About.screen.jsx";
 import { useState } from "react";
 import { WorkScreen } from "./screens/Work.screen.jsx";
-import "./styles/fonts.css"
-import "./styles/animate.css"
+import "./styles/fonts.css";
+import "./styles/an.css";
 
 const router = createBrowserRouter([
   {

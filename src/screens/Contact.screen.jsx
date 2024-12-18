@@ -11,6 +11,7 @@ import { Socials } from "../components/shared/Socials.jsx";
 import { Title } from "../components/shared/Title.jsx";
 import { useWindowSize } from "../utils/useWindowSize.jsx";
 import { AnimatedBorders } from "../components/shared/AnimatedBorders.jsx";
+import { Logo3D } from "../components/shared/3DLogo.jsx";
 
 export const ContactScreen = () => {
   const { isHeaderOpen } = useContext(CommonContext);
@@ -82,9 +83,11 @@ export const ContactScreen = () => {
             style={{
               display: "flex",
               flex: 2,
+              padding: 0,
             }}
           >
             <AnimatedBorders hasBorderRight />
+            <Logo3D />
           </Box>
           <div
             style={{
