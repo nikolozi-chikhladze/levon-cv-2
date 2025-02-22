@@ -128,7 +128,7 @@ export const WorksScreen = () => {
                   height: worksListHeight - 32,
                   objectPosition: "0% 0%",
                   paddingLeft: 38,
-                  opacity: !hoveredWorkItem?.cover && 0,
+                  visibility: !hoveredWorkItem?.cover ? "hidden" : "visible",
                 }}
               />
             </Box>
