@@ -23,16 +23,26 @@ export const SocialsText = styled.p`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
     height: 2px; /* Adjust the height of the border */
+    width: 100%; /* The element spans the full width */
     background-color: #fff; /* Adjust the color of the border */
-    transition: width 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left; /* Start animation from the left */
+    transition: transform 0.3s ease-in-out, transform-origin 0s 0.3s; /* Delayed origin change */
   }
 
   &:hover::after {
-    width: 100%; /* Expands the border on hover */
+    transform: scaleX(1); /* Expand from left to right */
+    transform-origin: left; /* Ensure it starts from the left */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
   }
-  
+
+  &:not(:hover)::after {
+    transform: scaleX(0); /* Collapse to the right */
+    transform-origin: right; /* Anchor animation to the right side */
+    transition: transform 0.3s ease-in-out, transform-origin 0s; /* Change origin immediately */
+  }  
+
   @media (max-width: 480px) {
     font-size: 16px;
     line-height: 20px;
